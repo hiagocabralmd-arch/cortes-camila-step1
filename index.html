@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cortes · Dra. Camila — USMLE Step 1 (@HiagoCabralMD)</title>
+<style>
+  :root {
+    --bg: #0e0e10;
+    --surface: #17171b;
+    --surface-2: #1e1e24;
+    --border: #2b2b33;
+    --text: #f2f2f4;
+    --muted: #a3a3ad;
+    --accent: #FFD400;
+    --accent-dim: rgba(255, 212, 0, .14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 64px; }
+
+  /* Header */
+  .page-head {
+    padding: 48px 0 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .page-head .kicker {
+    color: var(--accent); font-size: 13px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .page-head h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.2; }
+  .page-head .sub { color: var(--muted); margin-top: 8px; font-size: 15px; }
+
+  /* Sumário */
+  .toc {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin: 24px 0 40px;
+  }
+  .toc h2 {
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; display: grid; gap: 4px; }
+  .toc a {
+    display: flex; align-items: baseline; gap: 12px;
+    color: var(--text); text-decoration: none;
+    padding: 8px 10px; border-radius: 8px; font-size: 14.5px;
+  }
+  .toc a:hover { background: var(--surface-2); }
+  .nav-num { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .nav-title { flex: 1; }
+  .nav-dur { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+  /* Cards */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; margin-bottom: 36px; overflow: hidden;
+    scroll-margin-top: 16px;
+  }
+  .card-head {
+    display: flex; gap: 20px; align-items: center;
+    padding: 22px 24px; border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .card-num {
+    font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--accent);
+    letter-spacing: -.02em; white-space: nowrap; line-height: 1;
+  }
+  .card-head h2 { font-size: clamp(17px, 2.4vw, 21px); line-height: 1.3; }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .badge {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; padding: 4px 10px; border-radius: 999px;
+    background: var(--accent-dim); color: var(--accent);
+    border: 1px solid rgba(255, 212, 0, .35);
+  }
+  .badge-dados { background: rgba(76, 175, 255, .12); color: #6cb9ff; border-color: rgba(76,175,255,.3); }
+  .badge-contrassenso { background: rgba(255, 120, 90, .12); color: #ff8a70; border-color: rgba(255,120,90,.3); }
+  .badge-dor { background: rgba(220, 90, 255, .12); color: #d88aff; border-color: rgba(220,90,255,.3); }
+  .chip {
+    font-size: 12.5px; color: var(--muted); padding: 4px 10px;
+    border: 1px solid var(--border); border-radius: 999px;
+  }
+  .chip-order { color: var(--text); font-weight: 600; }
+
+  .card-body {
+    display: grid; grid-template-columns: 300px 1fr; gap: 28px;
+    padding: 24px;
+  }
+  .video-col video {
+    width: 100%; max-width: 300px; aspect-ratio: 9/16;
+    border-radius: 12px; background: #000; display: block;
+    border: 1px solid var(--border);
+  }
+  .download-btn {
+    display: inline-block; margin-top: 14px;
+    background: var(--accent); color: #111; font-weight: 700;
+    text-decoration: none; padding: 10px 18px; border-radius: 8px;
+    font-size: 14px;
+  }
+  .download-btn:hover { filter: brightness(1.08); }
+
+  .copy-block { margin-bottom: 26px; }
+  .copy-block h3 { margin-bottom: 12px; }
+  .plat {
+    font-size: 12px; font-weight: 800; letter-spacing: .12em;
+    text-transform: uppercase; padding: 4px 12px; border-radius: 6px;
+  }
+  .plat-ig { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); color: #fff; }
+  .plat-yt { background: #c00; color: #fff; }
+  .plat-cm { background: var(--accent); color: #111; }
+  .field-label {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--muted); margin: 14px 0 5px; font-weight: 700;
+  }
+  .copy-text {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; font-size: 14px;
+    color: #dcdce2;
+  }
+  .copy-text.pre { white-space: pre-wrap; }
+  .copy-text.mono { font-size: 13px; color: var(--muted); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .copy-btn {
+    background: transparent; color: var(--accent);
+    border: 1px solid rgba(255, 212, 0, .45); border-radius: 8px;
+    padding: 8px 14px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .copy-btn:hover { background: var(--accent-dim); }
+  .copy-btn.primary { background: var(--accent); color: #111; border-color: var(--accent); }
+  .copy-btn.primary:hover { filter: brightness(1.08); }
+  .copy-btn.copied { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+
+  .transcricao { margin-top: 4px; }
+  .transcricao summary {
+    cursor: pointer; color: var(--muted); font-size: 14px; font-weight: 600;
+    padding: 8px 0;
+  }
+  .transcricao summary:hover { color: var(--text); }
+  .transcricao .copy-text { margin-top: 8px; }
+
+  /* Rodapé */
+  footer {
+    border-top: 1px solid var(--border); margin-top: 48px; padding-top: 32px;
+  }
+  footer h2 {
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+  }
+  .checklist { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .check-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; font-size: 14px; color: #dcdce2;
+  }
+  .check-item strong { color: var(--text); }
+  footer .fim { color: var(--muted); font-size: 12.5px; margin-top: 28px; }
+
+  @media (max-width: 780px) {
+    .card-body { grid-template-columns: 1fr; }
+    .video-col video { max-width: 280px; margin: 0 auto; }
+    .video-col { text-align: center; }
+    .card-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Entrega · Agendamento</p>
+    <h1>Cortes · Dra. Camila — USMLE Step 1 (@HiagoCabralMD)</h1>
+    <p class="sub">24 cortes verticais 1080×1920 prontos para agendar</p>
+  </header>
+
+  <nav class="toc" aria-label="Sumário dos cortes">
+    <h2>Sumário · ordem de postagem</h2>
+    <ol>
+      <li><a href="#corte-01"><span class="nav-num">01</span> <span class="nav-title">Fiz questões do USMLE na fila da Disney</span> <span class="nav-dur">1:23</span></a></li><li><a href="#corte-02"><span class="nav-num">02</span> <span class="nav-title">O e-mail de aprovação chegou às 8h, na praia</span> <span class="nav-dur">0:41</span></a></li><li><a href="#corte-03"><span class="nav-num">03</span> <span class="nav-title">Sou a prova viva de que não precisa de Anki</span> <span class="nav-dur">0:52</span></a></li><li><a href="#corte-04"><span class="nav-num">04</span> <span class="nav-title">Depois de formado, você não para a vida — encaixa o sonho nela</span> <span class="nav-dur">0:47</span></a></li><li><a href="#corte-05"><span class="nav-num">05</span> <span class="nav-title">Passei no Step 1 estudando 3 horas líquidas por dia</span> <span class="nav-dur">1:01</span></a></li><li><a href="#corte-06"><span class="nav-num">06</span> <span class="nav-title">Médico de família nos EUA: horário comercial e US$ 300 mil/ano</span> <span class="nav-dur">0:41</span></a></li><li><a href="#corte-07"><span class="nav-num">07</span> <span class="nav-title">Não assisti videoaula — passei fazendo questões</span> <span class="nav-dur">0:53</span></a></li><li><a href="#corte-08"><span class="nav-num">08</span> <span class="nav-title">O filtro invisível: '+5 anos de formado não vale entrevistar'</span> <span class="nav-dur">0:50</span></a></li><li><a href="#corte-09"><span class="nav-num">09</span> <span class="nav-title">Inglês fraco? Você aprende inglês médico fazendo questões</span> <span class="nav-dur">1:29</span></a></li><li><a href="#corte-10"><span class="nav-num">10</span> <span class="nav-title">First Aid? Eu usei pra apoiar o notebook</span> <span class="nav-dur">1:22</span></a></li><li><a href="#corte-11"><span class="nav-num">11</span> <span class="nav-title">A gente já chegou na metade da vida — agora é por eles</span> <span class="nav-dur">1:19</span></a></li><li><a href="#corte-12"><span class="nav-num">12</span> <span class="nav-title">5 meses e meio no limbo do ECFMG (e 30 ligações pro robô)</span> <span class="nav-dur">1:12</span></a></li><li><a href="#corte-13"><span class="nav-num">13</span> <span class="nav-title">Limpo privada, faço mercado, cuido de 3 filhos — e passei no Step 1</span> <span class="nav-dur">1:21</span></a></li><li><a href="#corte-14"><span class="nav-num">14</span> <span class="nav-title">Passou no Step 1? Game over: o resto vai na banguela</span> <span class="nav-dur">1:15</span></a></li><li><a href="#corte-15"><span class="nav-num">15</span> <span class="nav-title">A janela era agora: como decidi tirar minha família do Brasil</span> <span class="nav-dur">1:13</span></a></li><li><a href="#corte-16"><span class="nav-num">16</span> <span class="nav-title">A falsa esperança das 'leis novas': ninguém entrou por elas</span> <span class="nav-dur">0:57</span></a></li><li><a href="#corte-17"><span class="nav-num">17</span> <span class="nav-title">20 questões em 1 hora: larga o celular em outro cômodo</span> <span class="nav-dur">1:07</span></a></li><li><a href="#corte-18"><span class="nav-num">18</span> <span class="nav-title">Quase adiei a prova por causa das férias das crianças</span> <span class="nav-dur">1:02</span></a></li><li><a href="#corte-19"><span class="nav-num">19</span> <span class="nav-title">Passar no Step 1 com filhos te coloca no rol dos extraordinários</span> <span class="nav-dur">0:46</span></a></li><li><a href="#corte-20"><span class="nav-num">20</span> <span class="nav-title">Minha revisão secreta: a pastinha das questões erradas</span> <span class="nav-dur">1:16</span></a></li><li><a href="#corte-21"><span class="nav-num">21</span> <span class="nav-title">Crianças na escola das 8h às 15h: a logística de mãe que passou no Step 1</span> <span class="nav-dur">1:28</span></a></li><li><a href="#corte-22"><span class="nav-num">22</span> <span class="nav-title">Refazer residência nos EUA? Aqui não é escravidão como no Brasil</span> <span class="nav-dur">1:05</span></a></li><li><a href="#corte-23"><span class="nav-num">23</span> <span class="nav-title">Bioquímica? Eu escolhi errar</span> <span class="nav-dur">0:42</span></a></li><li><a href="#corte-24"><span class="nav-num">24</span> <span class="nav-title">Médico de família nos EUA domina água, céu e mar</span> <span class="nav-dur">0:49</span></a></li>
+    </ol>
+  </nav>
+
+  <main>
+    
+<section class="card" id="corte-01">
+  <header class="card-head">
+    <div class="card-num">CORTE 01</div>
+    <div class="card-head-main">
+      <h2>Fiz questões do USMLE na fila da Disney</h2>
+      <div class="card-meta">
+        <span class="badge badge-mentalidade">Mentalidade</span>
+        <span class="chip">⏱ 1:23 (83s)</span>
+        <span class="chip chip-order">Postar 1º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_01_questoes-na-fila-da-disney.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_01_questoes-na-fila-da-disney.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_01_questoes-na-fila-da-disney.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Ela fez 10 questões do USMLE Step 1 na fila de um brinquedo da Disney. 🎢
+
+Uma hora de pé na fila. Enquanto todo mundo passava o feed, a Dra. Camila abriu o banco de questões. Dez questõezinhas. Porque quem é médico formado há anos, com filhos e carreira rodando, não tem "momento perfeito" — tem os buracos do dia.
+
+Ela mesmo resume com o ditado que carrega até hoje: nada que presta nesse mundo foi feito sob condições ideais. Nem a filosofia, que nasceu numa Grécia em crise. Nem a sua aprovação no Step 1.
+
+O momento ideal não existe. A fila da Disney, sim.
+
+👉 Comenta MÉTODO que eu te mando o vídeo completo com a estratégia dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #residenciamedica #oldgrad #ecfmg #step1 #estudos #produtividade #medicosbrasileiros #revalida #match</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Ela fez 10 questões do USMLE Step 1 na fila de um brinquedo da Disney. 🎢
+
+Uma hora de pé na fila. Enquanto todo mundo passava o feed, a Dra. Camila abriu o banco de questões. Dez questõezinhas. Porque quem é médico formado há anos, com filhos e carreira rodando, não tem &quot;momento perfeito&quot; — tem os buracos do dia.
+
+Ela mesmo resume com o ditado que carrega até hoje: nada que presta nesse mundo foi feito sob condições ideais. Nem a filosofia, que nasceu numa Grécia em crise. Nem a sua aprovação no Step 1.
+
+O momento ideal não existe. A fila da Disney, sim.
+
+👉 Comenta MÉTODO que eu te mando o vídeo completo com a estratégia dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #residenciamedica #oldgrad #ecfmg #step1 #estudos #produtividade #medicosbrasileiros #revalida #match">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #residenciamedica #oldgrad #ecfmg #step1 #estudos #produtividade #medicosbrasileiros #revalida #match">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Ela fez questões do USMLE na fila da Disney (e passou no Step 1)</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Ela fez questões do USMLE na fila da Disney (e passou no Step 1)">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Sem condições ideais: essa médica brasileira estudava para o USMLE Step 1 até na fila de brinquedo da Disney — e foi aprovada morando nos EUA. A mentalidade que separa quem passa de quem adia a revalidação para sempre. Assista à entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Sem condições ideais: essa médica brasileira estudava para o USMLE Step 1 até na fila de brinquedo da Disney — e foi aprovada morando nos EUA. A mentalidade que separa quem passa de quem adia a revalidação para sempre. Assista à entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #revalidacao">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #medicinanoseua #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #medicinanoseua #revalidacao">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Quantas questões você consegue encaixar nos "buracos" do seu dia? Conta aqui embaixo 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Quantas questões você consegue encaixar nos &quot;buracos&quot; do seu dia? Conta aqui embaixo 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Já cheguei a fazer questões, sabe aonde? Na fila de brinquedo da Disney.
+Olha! Caramba!
+Uma hora ali de pé, cheguei a fazer ali. Dez questõezinhas. Dez questõezinhas na fila da Disney.
+E tu aproveitasse as oportunidades, sabe?
+Claro! Não existe o momento... as condições perfeitas. Então, assim, ó... vou ficar aqui olhando para as paredes, passando o feed? Quem sabe eu faço aqui. Fazia.
+Tem um ditado que o Olavo falava, que eu levo no meu coração até hoje. Ele falava assim: nada que preste nesse mundo foi feito sob as condições ideais. A começar pela própria filosofia, que surgiu na Grécia, no momento de muita degradação moral e econômica da cidade. Se dizia que a coruja é a ave da sabedoria porque ela só voa ao entardecer, ao anoitecer.
+Quando você para na história da humanidade: nada que presta nunca foi feita em condições ideais.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-02">
+  <header class="card-head">
+    <div class="card-num">CORTE 02</div>
+    <div class="card-head-main">
+      <h2>O e-mail de aprovação chegou às 8h, na praia</h2>
+      <div class="card-meta">
+        <span class="badge badge-emocional">Emocional</span>
+        <span class="chip">⏱ 0:41 (41s)</span>
+        <span class="chip chip-order">Postar 2º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_02_aprovacao-na-praia.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_02_aprovacao-na-praia.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_02_aprovacao-na-praia.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Eram 8h da manhã, na praia, quando o e-mail chegou. Ela abriu. E começou a chorar. 🌊
+
+O marido assustado: "Meu Deus, o que aconteceu?" — e ela só chorava. Era o resultado do USMLE Step 1: aprovada.
+
+A Dra. Camila é anestesista, mãe de 3, 16 anos de formada. E diz, sem hesitar, que essa foi a prova mais difícil da vida: "o maior desafio dentro da medicina, disparado".
+
+Não foi fácil. Foi possível. E a cena desse e-mail na praia é o que espera quem decide começar.
+
+📩 Manda esse vídeo pra aquele amigo médico que precisa ver isso hoje.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #anestesiologia #oldgrad #ecfmg #step1 #residenciamedica #medicosbrasileiros #revalida #sonho #aprovacao</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Eram 8h da manhã, na praia, quando o e-mail chegou. Ela abriu. E começou a chorar. 🌊
+
+O marido assustado: &quot;Meu Deus, o que aconteceu?&quot; — e ela só chorava. Era o resultado do USMLE Step 1: aprovada.
+
+A Dra. Camila é anestesista, mãe de 3, 16 anos de formada. E diz, sem hesitar, que essa foi a prova mais difícil da vida: &quot;o maior desafio dentro da medicina, disparado&quot;.
+
+Não foi fácil. Foi possível. E a cena desse e-mail na praia é o que espera quem decide começar.
+
+📩 Manda esse vídeo pra aquele amigo médico que precisa ver isso hoje.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #anestesiologia #oldgrad #ecfmg #step1 #residenciamedica #medicosbrasileiros #revalida #sonho #aprovacao">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #anestesiologia #oldgrad #ecfmg #step1 #residenciamedica #medicosbrasileiros #revalida #sonho #aprovacao">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">O e-mail do USMLE Step 1 chegou às 8h na praia — e ela chorou</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="O e-mail do USMLE Step 1 chegou às 8h na praia — e ela chorou">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Anestesista, mãe de 3 e 16 anos de formada: ela recebeu a aprovação no USMLE Step 1 na praia, às 8h da manhã, e não segurou o choro. "O maior desafio dentro da medicina, disparado." Veja a história completa da revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #medico</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Anestesista, mãe de 3 e 16 anos de formada: ela recebeu a aprovação no USMLE Step 1 na praia, às 8h da manhã, e não segurou o choro. &quot;O maior desafio dentro da medicina, disparado.&quot; Veja a história completa da revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #medico">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #medicinanoseua #medico</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #medicinanoseua #medico">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Onde você imagina estar quando receber o SEU e-mail de aprovação? Escreve aqui pra dar sorte 🍀</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Onde você imagina estar quando receber o SEU e-mail de aprovação? Escreve aqui pra dar sorte 🍀">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">E a gente estava na praia. Fui levantando. Era oito horas da manhã. Entrou o e-mail. Meu Deus. Eu abri. Instantaneamente abri. Comecei a chorar.
+Meu marido viu e ele... 'Meu Deus, o que aconteceu?' E eu só chorava, né?
+Foi uma emoção indescritível.
+Eu digo pro pessoal mais próximo: foi o maior desafio dentro da medicina, em termos de prova, que eu fiz até hoje. Disparado.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-03">
+  <header class="card-head">
+    <div class="card-num">CORTE 03</div>
+    <div class="card-head-main">
+      <h2>Sou a prova viva de que não precisa de Anki</h2>
+      <div class="card-meta">
+        <span class="badge badge-contrassenso">Contrassenso</span>
+        <span class="chip">⏱ 0:52 (52s)</span>
+        <span class="chip chip-order">Postar 3º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_03_passei-sem-anki.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_03_passei-sem-anki.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_03_passei-sem-anki.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Ela passou no USMLE Step 1 sem abrir UM card de Anki. ❌
+
+Tentou por 6 meses. Se "chibatava" vendo os gurus do Instagram com curso de Anki, baralho perfeito, método infalível. Até que decidiu: "Isso não é pra mim." Desistiu da ferramenta — não do sonho.
+
+E foi aprovada do mesmo jeito.
+
+Se você se sente "limitado tecnologicamente" e acha que isso te desqualifica pra revalidar nos EUA, esse vídeo é sua permissão oficial: Anki é ferramenta, não requisito.
+
+👉 Comenta SEM ANKI que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #anki #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #estudos #metododeestudo #medicosbrasileiros #revalida #questoes</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Ela passou no USMLE Step 1 sem abrir UM card de Anki. ❌
+
+Tentou por 6 meses. Se &quot;chibatava&quot; vendo os gurus do Instagram com curso de Anki, baralho perfeito, método infalível. Até que decidiu: &quot;Isso não é pra mim.&quot; Desistiu da ferramenta — não do sonho.
+
+E foi aprovada do mesmo jeito.
+
+Se você se sente &quot;limitado tecnologicamente&quot; e acha que isso te desqualifica pra revalidar nos EUA, esse vídeo é sua permissão oficial: Anki é ferramenta, não requisito.
+
+👉 Comenta SEM ANKI que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #anki #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #estudos #metododeestudo #medicosbrasileiros #revalida #questoes">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #anki #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #estudos #metododeestudo #medicosbrasileiros #revalida #questoes">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Passei no USMLE Step 1 SEM Anki: "sou a prova viva"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Passei no USMLE Step 1 SEM Anki: &quot;sou a prova viva&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">6 meses brigando com o Anki, zero cards abertos — e aprovada no USMLE Step 1 mesmo assim. Essa médica brasileira derruba o maior dogma da comunidade USMLE e dá alívio pra quem não se adapta à ferramenta. Entrevista completa sobre revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #anki #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="6 meses brigando com o Anki, zero cards abertos — e aprovada no USMLE Step 1 mesmo assim. Essa médica brasileira derruba o maior dogma da comunidade USMLE e dá alívio pra quem não se adapta à ferramenta. Entrevista completa sobre revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #anki #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #anki #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #anki #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você estuda com Anki ou não conseguiu se adaptar? Conta aqui — sem julgamentos 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você estuda com Anki ou não conseguiu se adaptar? Conta aqui — sem julgamentos 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Eu sou a prova viva de que não é necessário Anki, assim.
+Tentei, juro. Eu fiquei uns seis meses e eu ficava me chibatando, né? Porque daí eu olhava os gurus falando no Instagram: curso de Anki, de montar baralho, não sei o quê.
+Tentei, mas eu sou tão limitada, assim, tecnologicamente, que eu não consegui. Não consegui. Não abri um card de Anki.
+Quer saber? Vou desistir. Isso não é pra mim.
+Porque começaram a aparecer depoimentos de pessoas que obtiveram sucesso e que também não utilizaram Anki.
+Foi tu, né? Inclusive.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-04">
+  <header class="card-head">
+    <div class="card-num">CORTE 04</div>
+    <div class="card-head-main">
+      <h2>Depois de formado, você não para a vida — encaixa o sonho nela</h2>
+      <div class="card-meta">
+        <span class="badge badge-dor">Dor</span>
+        <span class="chip">⏱ 0:47 (47s)</span>
+        <span class="chip chip-order">Postar 4º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_04_nao-existe-parar-a-vida.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_04_nao-existe-parar-a-vida.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_04_nao-existe-parar-a-vida.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Vou esperar o momento certo" tem outro nome: auto-sabotagem. ⚠️
+
+Depois de formado, não existe mais parar a vida pra estudar. Não tem. Você encaixa o sonho DENTRO da vida — não o contrário.
+
+"Ai, estou trabalhando muito." "Ai, vou esperar meus filhos ficarem mais independentes." A Dra. Camila, mãe de 3 e aprovada no USMLE Step 1, classifica isso sem anestesia: não existe, e nunca vai existir, a condição ideal pra ir atrás do seu sonho.
+
+Vai. Encaixa do jeito que dá.
+
+🔖 Salva esse vídeo pra reler na próxima vez que a desculpa aparecer.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #autosabotagem #medicosbrasileiros #revalida #residenciamedica #carreira</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Vou esperar o momento certo&quot; tem outro nome: auto-sabotagem. ⚠️
+
+Depois de formado, não existe mais parar a vida pra estudar. Não tem. Você encaixa o sonho DENTRO da vida — não o contrário.
+
+&quot;Ai, estou trabalhando muito.&quot; &quot;Ai, vou esperar meus filhos ficarem mais independentes.&quot; A Dra. Camila, mãe de 3 e aprovada no USMLE Step 1, classifica isso sem anestesia: não existe, e nunca vai existir, a condição ideal pra ir atrás do seu sonho.
+
+Vai. Encaixa do jeito que dá.
+
+🔖 Salva esse vídeo pra reler na próxima vez que a desculpa aparecer.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #autosabotagem #medicosbrasileiros #revalida #residenciamedica #carreira">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #autosabotagem #medicosbrasileiros #revalida #residenciamedica #carreira">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Médico formado há anos: "esperar o momento certo" é auto-sabotagem</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Médico formado há anos: &quot;esperar o momento certo&quot; é auto-sabotagem">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Mãe de 3, 16 anos de formada, aprovada no USMLE Step 1: ela explica por que médico formado não pode esperar a "condição ideal" para revalidar nos EUA — o sonho tem que caber dentro da vida, não o contrário. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #revalidacao #medicinanoseua #oldgrad</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Mãe de 3, 16 anos de formada, aprovada no USMLE Step 1: ela explica por que médico formado não pode esperar a &quot;condição ideal&quot; para revalidar nos EUA — o sonho tem que caber dentro da vida, não o contrário. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #revalidacao #medicinanoseua #oldgrad">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #revalidacao #medicinanoseua #oldgrad</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #revalidacao #medicinanoseua #oldgrad">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Qual é a desculpa que mais te trava hoje: tempo, filhos ou trabalho? Responde aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Qual é a desculpa que mais te trava hoje: tempo, filhos ou trabalho? Responde aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Uma coisa que a gente aprende nessa jornada é que, depois que a gente tá formado, já não existe mais aquela coisa dos sonhos que você consegue parar a sua vida pra poder fazer a prova. Não tem.
+Tu tem que encaixar o teu sonho dentro da tua vida. Não adianta tu esperar: 'ai, não é o momento', 'ai, eu estou trabalhando muito', 'ai, eu vou esperar depois que meus filhos estiverem mais independentes'.
+Isso é auto-sabotagem. Porque não existe, não vai existir a condição ideal pra tu ir atrás do teu sonho.
+Então é isso: tu vai ter que... vai, encaixa do jeito que dá.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-05">
+  <header class="card-head">
+    <div class="card-num">CORTE 05</div>
+    <div class="card-head-main">
+      <h2>Passei no Step 1 estudando 3 horas líquidas por dia</h2>
+      <div class="card-meta">
+        <span class="badge badge-dados">Dados</span>
+        <span class="chip">⏱ 1:01 (61s)</span>
+        <span class="chip chip-order">Postar 5º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_05_tres-horas-liquidas.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_05_tres-horas-liquidas.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_05_tres-horas-liquidas.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Ela passou no USMLE Step 1 estudando 3 horas por dia. Três horas LÍQUIDAS. ⏱️
+
+Não 10h com a bunda na cadeira. Não o dia inteiro "tirado pra estudar". Três horas de estudo de verdade, todo dia.
+
+E aqui vai a parte que dói: quem diz que estuda 8, 10 horas geralmente passa 80% do tempo voando na imaginação ou no Instagram. Hora bruta não é hora líquida.
+
+Três horas líquidas exigem prática. Mas rendem demais — e foram suficientes pra aprovação de uma médica formada há 16 anos.
+
+👉 Comenta 3H que eu te mando o vídeo completo com a rotina dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotinadeestudos #foco #estudocomquestoes #medicosbrasileiros #revalida #produtividade</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Ela passou no USMLE Step 1 estudando 3 horas por dia. Três horas LÍQUIDAS. ⏱️
+
+Não 10h com a bunda na cadeira. Não o dia inteiro &quot;tirado pra estudar&quot;. Três horas de estudo de verdade, todo dia.
+
+E aqui vai a parte que dói: quem diz que estuda 8, 10 horas geralmente passa 80% do tempo voando na imaginação ou no Instagram. Hora bruta não é hora líquida.
+
+Três horas líquidas exigem prática. Mas rendem demais — e foram suficientes pra aprovação de uma médica formada há 16 anos.
+
+👉 Comenta 3H que eu te mando o vídeo completo com a rotina dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotinadeestudos #foco #estudocomquestoes #medicosbrasileiros #revalida #produtividade">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #revalidacao #medicinanoseua #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotinadeestudos #foco #estudocomquestoes #medicosbrasileiros #revalida #produtividade">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">3 horas líquidas por dia: a rotina real de quem passou no USMLE Step 1</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="3 horas líquidas por dia: a rotina real de quem passou no USMLE Step 1">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Esqueça as "10 horas por dia": essa médica brasileira foi aprovada no USMLE Step 1 estudando 3 horas líquidas diárias — e explica por que quem diz estudar mais que 4h geralmente está contando hora bruta. Entrevista completa sobre revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #estudos #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Esqueça as &quot;10 horas por dia&quot;: essa médica brasileira foi aprovada no USMLE Step 1 estudando 3 horas líquidas diárias — e explica por que quem diz estudar mais que 4h geralmente está contando hora bruta. Entrevista completa sobre revalidação nos EUA no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #estudos #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #estudos #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #estudos #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Seja honesto: quantas horas LÍQUIDAS você estuda por dia hoje? 👀</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Seja honesto: quantas horas LÍQUIDAS você estuda por dia hoje? 👀">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Não dava muito, mas três horas.
+É isso. Três horas líquidas.
+Três horas líquidas é muita coisa. A gente acha que não, mas se você estudar três horas líquidas, cara, você vai longe.
+Quem escuta a gente falando pensa que tu tinha que ficar dez horas com a bunda na cadeira por dia pra conseguir. Não. Você dificilmente vai conhecer uma pessoa que consegue estudar mais de quatro horas por dia. Geralmente quem diz que estuda mais do que isso não está falando hora bruta: o cara tirou o dia pra estudar, mas passou 80% do tempo ou voando na imaginação ou mexendo no Instagram.
+Pra chegar a três horas líquidas de estudo por dia, você tem que ter muita prática de estudo. É muita coisa. Três horas líquidas é muita coisa. Rende demais. Rende muito.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-06">
+  <header class="card-head">
+    <div class="card-num">CORTE 06</div>
+    <div class="card-head-main">
+      <h2>Médico de família nos EUA: horário comercial e US$ 300 mil/ano</h2>
+      <div class="card-meta">
+        <span class="badge badge-dados">Dados</span>
+        <span class="chip">⏱ 0:41 (41s)</span>
+        <span class="chip chip-order">Postar 6º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_06_campo-minado-300-mil.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_06_campo-minado-300-mil.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_06_campo-minado-300-mil.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">No Brasil, escolher especialidade é andar em campo minado. Nos EUA, médico de família gira US$ 250-300 mil/ano. Em horário comercial. 💰
+
+Aqui, se você faz clínica médica ou medicina de família, "está lascada". Todo mundo espremido em dermato, anestésio, oftalmo — meia dúzia de especialidades que salvam.
+
+Lá, medicina de família paga US$ 250-300 mil por ano trabalhando horário comercial. E se abrir um med spa? "Você fica milionário."
+
+Não é sobre dinheiro fácil. É sobre um sistema onde a sua especialidade não decide se você vive bem ou mal.
+
+📲 Envia pra aquele colega médico que vive reclamando do mercado no Brasil.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #medicinadefamilia #oldgrad #ecfmg #salariomedico #residenciamedica #medicosbrasileiros #revalida #match #carreiramedica #usmlestep1</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="No Brasil, escolher especialidade é andar em campo minado. Nos EUA, médico de família gira US$ 250-300 mil/ano. Em horário comercial. 💰
+
+Aqui, se você faz clínica médica ou medicina de família, &quot;está lascada&quot;. Todo mundo espremido em dermato, anestésio, oftalmo — meia dúzia de especialidades que salvam.
+
+Lá, medicina de família paga US$ 250-300 mil por ano trabalhando horário comercial. E se abrir um med spa? &quot;Você fica milionário.&quot;
+
+Não é sobre dinheiro fácil. É sobre um sistema onde a sua especialidade não decide se você vive bem ou mal.
+
+📲 Envia pra aquele colega médico que vive reclamando do mercado no Brasil.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #medicinadefamilia #oldgrad #ecfmg #salariomedico #residenciamedica #medicosbrasileiros #revalida #match #carreiramedica #usmlestep1">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #medicinadefamilia #oldgrad #ecfmg #salariomedico #residenciamedica #medicosbrasileiros #revalida #match #carreiramedica #usmlestep1">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Médico de família nos EUA ganha US$ 300 mil/ano em horário comercial</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Médico de família nos EUA ganha US$ 300 mil/ano em horário comercial">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">No Brasil, escolher especialidade médica é "andar em campo minado". Nos EUA, medicina de família rende US$ 250-300 mil por ano em horário comercial. O contraste que faz médico brasileiro repensar a revalidação nos EUA e o USMLE. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinanoseua #medico #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="No Brasil, escolher especialidade médica é &quot;andar em campo minado&quot;. Nos EUA, medicina de família rende US$ 250-300 mil por ano em horário comercial. O contraste que faz médico brasileiro repensar a revalidação nos EUA e o USMLE. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinanoseua #medico #revalidacao">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #medicinanoseua #medico #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #medicinanoseua #medico #revalidacao">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Se você pudesse escolher qualquer especialidade nos EUA, qual seria? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Se você pudesse escolher qualquer especialidade nos EUA, qual seria? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">No Brasil, a escolha da sua especialidade é andar no campo minado. Tem meia dúzia de especialidade que você fica menos pior, tem um monte que você fica na M. No Brasil, você faz clínica médica, você está lascada; você faz medicina da família, você está lascada. Todo mundo quer fazer dermato, anestésio, oftalmo, otorrino — meia dúzia de especialidade que você consegue alguma coisinha no mercado.
+Aqui nos Estados Unidos, não. Você faz medicina da família, trabalha horário comercial, gira 250, 300 conto por ano. Se quiser abrir seu med spa, você fica milionário. Escalona.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-07">
+  <header class="card-head">
+    <div class="card-num">CORTE 07</div>
+    <div class="card-head-main">
+      <h2>Não assisti videoaula — passei fazendo questões</h2>
+      <div class="card-meta">
+        <span class="badge badge-contrassenso">Contrassenso</span>
+        <span class="chip">⏱ 0:53 (53s)</span>
+        <span class="chip chip-order">Postar 7º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_07_videoaula-perda-de-tempo.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_07_videoaula-perda-de-tempo.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_07_videoaula-perda-de-tempo.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Zero videoaula. Nenhum PDF terminado. Aprovada no USMLE Step 1. ✅
+
+A técnica da Dra. Camila é um tapa na cara do estudo passivo: "Eu não paro na frente do computador pra assistir uma aula. Pra ficar olhando uma pessoa explanando, eu não consigo."
+
+Imprimiu os PDFs do Melman? Imprimiu. Terminou algum? Nenhum. Porque cada vez que pensava "pega um PDF", ela ia fazer mais dez questões. Mais dez questões. Mais dez questões.
+
+Questão é estudo ativo. Videoaula, pra muita gente, é só conforto disfarçado de progresso.
+
+👉 Comenta QUESTÕES que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #questoes #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #metododeestudo #estudoativo #medicosbrasileiros #revalida #uworld</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Zero videoaula. Nenhum PDF terminado. Aprovada no USMLE Step 1. ✅
+
+A técnica da Dra. Camila é um tapa na cara do estudo passivo: &quot;Eu não paro na frente do computador pra assistir uma aula. Pra ficar olhando uma pessoa explanando, eu não consigo.&quot;
+
+Imprimiu os PDFs do Melman? Imprimiu. Terminou algum? Nenhum. Porque cada vez que pensava &quot;pega um PDF&quot;, ela ia fazer mais dez questões. Mais dez questões. Mais dez questões.
+
+Questão é estudo ativo. Videoaula, pra muita gente, é só conforto disfarçado de progresso.
+
+👉 Comenta QUESTÕES que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #questoes #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #metododeestudo #estudoativo #medicosbrasileiros #revalida #uworld">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #questoes #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #metododeestudo #estudoativo #medicosbrasileiros #revalida #uworld">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Ela passou no USMLE Step 1 SEM videoaula — só fazendo questões</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Ela passou no USMLE Step 1 SEM videoaula — só fazendo questões">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Não assistiu videoaula, não terminou nenhum PDF — e foi aprovada no USMLE Step 1 com um método 100% baseado em questões. O contrassenso que alivia quem odeia estudo passivo na preparação para a revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #questoes #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Não assistiu videoaula, não terminou nenhum PDF — e foi aprovada no USMLE Step 1 com um método 100% baseado em questões. O contrassenso que alivia quem odeia estudo passivo na preparação para a revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #questoes #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #questoes #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #questoes #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Time questões ou time videoaula? Defenda seu lado nos comentários ⚔️</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Time questões ou time videoaula? Defenda seu lado nos comentários ⚔️">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">A minha técnica: eu não paro na frente do computador pra assistir uma aula. É um estudo meio passivo, que eu vou escutando. Eu não consigo parar. Eu paro pra resolver questões, mas pra ficar olhando uma pessoa explanando, eu não consigo.
+Os PDFs do Melman, imprimi alguns. Te confesso que eu não terminei de ler nenhum dos que eu imprimi, tá? Porque eu sou muito fã de estudar fazendo questões.
+Então, assim, ó: 'ah, pega um PDF' — eu não, vou fazer mais dez questões. Sabe? Fazia mais dez questões.
+Será que fez falta pra mim? Não sei.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-08">
+  <header class="card-head">
+    <div class="card-num">CORTE 08</div>
+    <div class="card-head-main">
+      <h2>O filtro invisível: '+5 anos de formado não vale entrevistar'</h2>
+      <div class="card-meta">
+        <span class="badge badge-dor">Dor</span>
+        <span class="chip">⏱ 0:50 (50s)</span>
+        <span class="chip chip-order">Postar 8º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_08_filtro-invisivel-ano-formatura.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_08_filtro-invisivel-ano-formatura.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_08_filtro-invisivel-ano-formatura.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Candidato com mais de 5 anos de formado não vale a pena entrevistar." Eu ouvi isso de uma diretora de programa de residência. 🎯
+
+O filtro invisível do Match não é idade — lei federal americana proíbe. É ano de formatura. Se um americano se forma e passa 8 anos sem residência, a pergunta é: o que ele ficou fazendo?
+
+Mas aí vem a parte que ninguém te conta: quando ela disse "eu entrei com 8 anos de formada", a resposta foi: "Ah, mas você é estrangeira."
+
+Porque pro médico brasileiro, o programa ENTENDE os anos de carreira no Brasil. O filtro existe — mas pra você, old grad, ele não funciona como você imagina. Cada programa entende de um jeito.
+
+🔖 Salva esse vídeo e assiste a entrevista completa: @HiagoCabralMD no YouTube.</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #match #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #residency #programdirector #medicosbrasileiros #revalida #img</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Candidato com mais de 5 anos de formado não vale a pena entrevistar.&quot; Eu ouvi isso de uma diretora de programa de residência. 🎯
+
+O filtro invisível do Match não é idade — lei federal americana proíbe. É ano de formatura. Se um americano se forma e passa 8 anos sem residência, a pergunta é: o que ele ficou fazendo?
+
+Mas aí vem a parte que ninguém te conta: quando ela disse &quot;eu entrei com 8 anos de formada&quot;, a resposta foi: &quot;Ah, mas você é estrangeira.&quot;
+
+Porque pro médico brasileiro, o programa ENTENDE os anos de carreira no Brasil. O filtro existe — mas pra você, old grad, ele não funciona como você imagina. Cada programa entende de um jeito.
+
+🔖 Salva esse vídeo e assiste a entrevista completa: @HiagoCabralMD no YouTube.
+
+#usmle #match #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #residency #programdirector #medicosbrasileiros #revalida #img">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #match #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #residency #programdirector #medicosbrasileiros #revalida #img">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">O filtro invisível do Match: "+5 anos de formado não vale entrevistar"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="O filtro invisível do Match: &quot;+5 anos de formado não vale entrevistar&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Uma conversa de bastidor com uma diretora de programa de residência revela o filtro real do Match para médicos formados há mais de 5 anos — e por que estrangeiros e old grads são vistos de forma diferente. Essencial para quem quer revalidar medicina nos EUA via USMLE e ECFMG. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #match #oldgrad #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Uma conversa de bastidor com uma diretora de programa de residência revela o filtro real do Match para médicos formados há mais de 5 anos — e por que estrangeiros e old grads são vistos de forma diferente. Essencial para quem quer revalidar medicina nos EUA via USMLE e ECFMG. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #match #oldgrad #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #match #oldgrad #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #match #oldgrad #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Há quantos anos você se formou? Responde aqui que eu te digo se esse filtro te afeta 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Há quantos anos você se formou? Responde aqui que eu te digo se esse filtro te afeta 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Eu interceptei esses dias uma conversa entre uma pessoa que é diretora de um programa e a coordenadora. Aí ela falando: 'olha, candidato com mais de cinco anos de formado, não vale a pena a gente entrevistar'.
+Aí eu falei assim pra ela: 'não, mas olha só, né? Eu, por exemplo, entrei com oito anos de formado.' Ela falou: 'ah, mas você é estrangeiro.'
+Porque quando é candidato americano, o americano, quando se forma, ele não pode atuar nos Estados Unidos. Ele é obrigado a fazer residência. Então, se ele não fez residência... o que ele ficou fazendo oito anos? Ele já esqueceu a faculdade de medicina.
+Eles falam: quando é estrangeiro, a gente entende.
+Isso aí, gente, foi a conversa que eu tive com o pessoal de um programa, tá? Mas cada programa entende de um jeito.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-09">
+  <header class="card-head">
+    <div class="card-num">CORTE 09</div>
+    <div class="card-head-main">
+      <h2>Inglês fraco? Você aprende inglês médico fazendo questões</h2>
+      <div class="card-meta">
+        <span class="badge badge-contrassenso">Contrassenso</span>
+        <span class="chip">⏱ 1:29 (89s)</span>
+        <span class="chip chip-order">Postar 9º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_09_ingles-aprende-fazendo-questoes.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_09_ingles-aprende-fazendo-questoes.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_09_ingles-aprende-fazendo-questoes.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Meu inglês é fraco" não é desculpa pra adiar o USMLE. É sintoma de quem ainda não começou. 🇺🇸
+
+A tese da Dra. Camila: você não estuda inglês pra depois fazer questões. Você aprende o inglês médico FAZENDO as questões — os termos se repetem, e hoje qualquer ferramenta traduz em tempo real.
+
+Começou do zero? Você só vai corrigir mais devagar no início, porque está aprendendo inglês e medicina juntos. E tudo bem: ninguém vai te perguntar se você levou um ano ou dois nos steps.
+
+O que separa você de chegar aos 50-60 anos recebendo R$ 55 da Unimed por consulta ou US$ 300 mil/ano nos EUA é exatamente isso: um aninho a mais, um aninho a menos. Ou nunca começar.
+
+👉 Comenta INGLÊS que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #inglesmedico #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #medicosbrasileiros #revalida #estudos #carreiramedica</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Meu inglês é fraco&quot; não é desculpa pra adiar o USMLE. É sintoma de quem ainda não começou. 🇺🇸
+
+A tese da Dra. Camila: você não estuda inglês pra depois fazer questões. Você aprende o inglês médico FAZENDO as questões — os termos se repetem, e hoje qualquer ferramenta traduz em tempo real.
+
+Começou do zero? Você só vai corrigir mais devagar no início, porque está aprendendo inglês e medicina juntos. E tudo bem: ninguém vai te perguntar se você levou um ano ou dois nos steps.
+
+O que separa você de chegar aos 50-60 anos recebendo R$ 55 da Unimed por consulta ou US$ 300 mil/ano nos EUA é exatamente isso: um aninho a mais, um aninho a menos. Ou nunca começar.
+
+👉 Comenta INGLÊS que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #inglesmedico #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #medicosbrasileiros #revalida #estudos #carreiramedica">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #inglesmedico #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #medicosbrasileiros #revalida #estudos #carreiramedica">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Inglês fraco? Você aprende inglês médico FAZENDO questões do USMLE</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Inglês fraco? Você aprende inglês médico FAZENDO questões do USMLE">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">A segunda maior objeção de quem quer revalidar medicina nos EUA derrubada: o inglês médico se aprende resolvendo questões do USMLE Step 1, porque os termos se repetem. Um ano a mais ou a menos não muda nada — o que muda é fazer ou não fazer. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #inglesmedico #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="A segunda maior objeção de quem quer revalidar medicina nos EUA derrubada: o inglês médico se aprende resolvendo questões do USMLE Step 1, porque os termos se repetem. Um ano a mais ou a menos não muda nada — o que muda é fazer ou não fazer. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #inglesmedico #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #inglesmedico #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #inglesmedico #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Numa escala de 0 a 10, como está seu inglês hoje? Responde aqui sem vergonha 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Numa escala de 0 a 10, como está seu inglês hoje? Responde aqui sem vergonha 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Só que eu acho que não tem que se preocupar em aprender inglês. Porque tu vai fazendo as questões. E hoje tem tanta ferramenta que tu consegue fazer uma tradução praticamente simultânea ali. E tu vai aprender o inglês médico ao longo da resolução das questões. Porque os termos se repetem.
+Com certeza. Pra quem está começando com o inglês mais básico, até inglês zerado, é natural você levar mais tempo para corrigir. Porque você está aprendendo inglês e medicina junto. Então, dê um pouquinho a mais para você.
+No fim das contas, não faz diferença nenhuma se você levou um ano ou dois anos para fazer os steps. Não faz diferença nenhuma. O que faz diferença é se você fez ou não.
+Porque um ano só te separando de você chegar aos 50, 60 anos recebendo R$ 55 da Unimed por uma consulta ou ganhando 300 mil dólares nos Estados Unidos por ano, por baixo. Se você quiser, sei lá, passar metade do mês surfando, é isso.
+O que é um aninho a mais, um aninho a menos? Não é problema nenhum.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-10">
+  <header class="card-head">
+    <div class="card-num">CORTE 10</div>
+    <div class="card-head-main">
+      <h2>First Aid? Eu usei pra apoiar o notebook</h2>
+      <div class="card-meta">
+        <span class="badge badge-dicas">Tática de estudo</span>
+        <span class="chip">⏱ 1:22 (82s)</span>
+        <span class="chip chip-order">Postar 10º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_10_first-aid-apoio-notebook.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_10_first-aid-apoio-notebook.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_10_first-aid-apoio-notebook.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">O First Aid dela serviu pra uma coisa: apoiar o notebook em cima. 📚
+
+Ela comprou o livro em 2024, quando estava perdida. E ficou um tempo "que nem cachorro perdido em dia de mudança": um pouco de Anki, um pouco de First Aid, um pouco de U-World — e não saía do lugar.
+
+A dica que mudou o jogo: foca em UM material, UMA metodologia. Centraliza. Porque pular de fonte em fonte não é estudo, é dispersão disfarçada de produtividade.
+
+No jiu-jitsu tem um ditado: a raposa conhece mil truques. O porco-espinho conhece um. Que funciona.
+
+👉 Comenta FOCO que eu te mando o vídeo completo com a metodologia dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #firstaid #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #uworld #metododeestudo #foco #medicosbrasileiros #revalida</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="O First Aid dela serviu pra uma coisa: apoiar o notebook em cima. 📚
+
+Ela comprou o livro em 2024, quando estava perdida. E ficou um tempo &quot;que nem cachorro perdido em dia de mudança&quot;: um pouco de Anki, um pouco de First Aid, um pouco de U-World — e não saía do lugar.
+
+A dica que mudou o jogo: foca em UM material, UMA metodologia. Centraliza. Porque pular de fonte em fonte não é estudo, é dispersão disfarçada de produtividade.
+
+No jiu-jitsu tem um ditado: a raposa conhece mil truques. O porco-espinho conhece um. Que funciona.
+
+👉 Comenta FOCO que eu te mando o vídeo completo com a metodologia dela.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #firstaid #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #uworld #metododeestudo #foco #medicosbrasileiros #revalida">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #firstaid #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #uworld #metododeestudo #foco #medicosbrasileiros #revalida">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">First Aid? Ela usou pra apoiar o notebook (e passou no USMLE Step 1)</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="First Aid? Ela usou pra apoiar o notebook (e passou no USMLE Step 1)">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Ela comprou o First Aid em 2024 e usou como apoio de notebook — porque estava dispersa entre Anki, U-World e PDFs "que nem cachorro perdido em dia de mudança". A dica: um material, uma metodologia. Essencial para quem se prepara para o USMLE Step 1 e a revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #firstaid #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Ela comprou o First Aid em 2024 e usou como apoio de notebook — porque estava dispersa entre Anki, U-World e PDFs &quot;que nem cachorro perdido em dia de mudança&quot;. A dica: um material, uma metodologia. Essencial para quem se prepara para o USMLE Step 1 e a revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #firstaid #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #firstaid #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #firstaid #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Quantos materiais diferentes você está usando AGORA na sua preparação? Confessa 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Quantos materiais diferentes você está usando AGORA na sua preparação? Confessa 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Usou FA?
+Não. O First Aid eu usei... eu usei para apoiar meu computador em cima.
+Eu comprei. O First Aid é bom para tirar foto. É, e para juntar pó.
+Não, não. Eu comprei o First Aid lá em 2024, quando eu estava perdida. Porque a gente tem que ter um cuidado: tem muito material também. Eu fiquei um tempo que nem cachorro perdido em dia de mudança, sabe? Faço isso, faço aquilo. Anki, First Aid, U-World. Quando tu vê, tu está com um pouco de cada e tu não está saindo do lugar.
+Então, essa é outra dica: foca em um material, uma metodologia. Não fica buscando em outras fontes. Centraliza. Porque tu acaba dispersando.
+No jiu-jitsu tem um ditado que é o seguinte: a raposa conhece mil truques. O porco-espinho conhece um. Que funciona.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-11">
+  <header class="card-head">
+    <div class="card-num">CORTE 11</div>
+    <div class="card-head-main">
+      <h2>A gente já chegou na metade da vida — agora é por eles</h2>
+      <div class="card-meta">
+        <span class="badge badge-emocional">Emocional</span>
+        <span class="chip">⏱ 1:19 (79s)</span>
+        <span class="chip chip-order">Postar 11º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_11_recado-e-por-eles.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_11_recado-e-por-eles.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_11_recado-e-por-eles.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"A gente já chegou na metade da vida. Não é mais pela gente. É por eles." 👨‍👩‍👧‍👦
+
+O recado final da Dra. Camila é pra quem já é pai, já é mãe: todo esse esforço — plantão, questão na madrugada, prova marcada — é pra deixar pros filhos melhores oportunidades e um país com mais segurança.
+
+E aí vem a frase que fecha qualquer debate: "Se fosse pra ganhar MENOS do que se ganha no Brasil, já valeria a pena pela família." Ganhando mais, então, nem se fala.
+
+Encaixe seus sonhos dentro da rotina. Tenha consistência. Nada é impossível.
+
+💛 Marca aqui um pai ou uma mãe médico(a) que precisa ouvir isso hoje.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #paismedicina #oldgrad #ecfmg #step1 #familia #medicosbrasileiros #revalida #carreiramedica #imigracao</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;A gente já chegou na metade da vida. Não é mais pela gente. É por eles.&quot; 👨‍👩‍👧‍👦
+
+O recado final da Dra. Camila é pra quem já é pai, já é mãe: todo esse esforço — plantão, questão na madrugada, prova marcada — é pra deixar pros filhos melhores oportunidades e um país com mais segurança.
+
+E aí vem a frase que fecha qualquer debate: &quot;Se fosse pra ganhar MENOS do que se ganha no Brasil, já valeria a pena pela família.&quot; Ganhando mais, então, nem se fala.
+
+Encaixe seus sonhos dentro da rotina. Tenha consistência. Nada é impossível.
+
+💛 Marca aqui um pai ou uma mãe médico(a) que precisa ouvir isso hoje.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #paismedicina #oldgrad #ecfmg #step1 #familia #medicosbrasileiros #revalida #carreiramedica #imigracao">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #paismedicina #oldgrad #ecfmg #step1 #familia #medicosbrasileiros #revalida #carreiramedica #imigracao">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Médica e mãe de 3: "a gente já chegou na metade da vida — agora é por eles"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Médica e mãe de 3: &quot;a gente já chegou na metade da vida — agora é por eles&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">O fechamento emocional da entrevista: por que médicos com filhos fazem o USMLE e a revalidação nos EUA "por eles" — e a frase que resume tudo: "se fosse pra ganhar menos do que no Brasil, já valeria a pena pela família". Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinanoseua #medico #familia</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="O fechamento emocional da entrevista: por que médicos com filhos fazem o USMLE e a revalidação nos EUA &quot;por eles&quot; — e a frase que resume tudo: &quot;se fosse pra ganhar menos do que no Brasil, já valeria a pena pela família&quot;. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinanoseua #medico #familia">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #medicinanoseua #medico #familia</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #medicinanoseua #medico #familia">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Quem é o seu "por eles"? Escreve o nome ou a inicial aqui embaixo 💛</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Quem é o seu &quot;por eles&quot;? Escreve o nome ou a inicial aqui embaixo 💛">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Nada é impossível, viu? E encaixe os seus sonhos dentro dessa rotina. Tenha consistência. E clareza do que vocês querem pra vida.
+Principalmente pros filhos. Pra quem já é pai, já é mãe. A gente tá fazendo esse esforço todo... é por eles. Porque a gente já chegou na metade da vida. Não é mais pela gente, né? É pra poder deixar pra eles melhores oportunidades. Viver num país com mais segurança. Esse é o meu recado: é por eles.
+É exatamente meu pensamento também. Eu me senti num país digno, com condições de ter um futuro honesto, sem ter medo a cada esquina.
+Se fosse pra ganhar menos do que se ganha no Brasil, já valeria a pena pela família.
+Exato. Ganhando mais, então, nem se fala.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-12">
+  <header class="card-head">
+    <div class="card-num">CORTE 12</div>
+    <div class="card-head-main">
+      <h2>5 meses e meio no limbo do ECFMG (e 30 ligações pro robô)</h2>
+      <div class="card-meta">
+        <span class="badge badge-burocracia">Burocracia</span>
+        <span class="chip">⏱ 1:12 (72s)</span>
+        <span class="chip chip-order">Postar 12º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_12_limbo-ecfmg-5-meses.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_12_limbo-ecfmg-5-meses.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_12_limbo-ecfmg-5-meses.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">5 meses e meio travada no ECFMG. Num dia, ela fez 30 ligações. Caíram num robô. 🤖
+
+O robô dizia: "devido à alta demanda, envie um e-mail". Enviou. Responderam um MÊS depois.
+
+O motivo do limbo? A faculdade subiu só o histórico traduzido — tinha que ser o original. E ainda deu sorte: se mandasse só o original, o ECFMG traduziria cobrando US$ 300.
+
+Esse é o bastidor burocrático que ninguém conta antes de você começar. E a lição prática é clara: comece a papelada CEDO, porque o ECFMG não tem pressa.
+
+👉 Comenta ECFMG que eu te mando o vídeo completo com todos os detalhes da liberação.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #ecfmg #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #step1 #burocracia #img #medicosbrasileiros #revalida #thematch #residencianoseua</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="5 meses e meio travada no ECFMG. Num dia, ela fez 30 ligações. Caíram num robô. 🤖
+
+O robô dizia: &quot;devido à alta demanda, envie um e-mail&quot;. Enviou. Responderam um MÊS depois.
+
+O motivo do limbo? A faculdade subiu só o histórico traduzido — tinha que ser o original. E ainda deu sorte: se mandasse só o original, o ECFMG traduziria cobrando US$ 300.
+
+Esse é o bastidor burocrático que ninguém conta antes de você começar. E a lição prática é clara: comece a papelada CEDO, porque o ECFMG não tem pressa.
+
+👉 Comenta ECFMG que eu te mando o vídeo completo com todos os detalhes da liberação.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #ecfmg #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #step1 #burocracia #img #medicosbrasileiros #revalida #thematch #residencianoseua">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #ecfmg #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #step1 #burocracia #img #medicosbrasileiros #revalida #thematch #residencianoseua">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">5 meses e meio no limbo do ECFMG: a burocracia que ninguém te conta (USMLE)</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="5 meses e meio no limbo do ECFMG: a burocracia que ninguém te conta (USMLE)">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">30 ligações caindo num robô, e-mail respondido um mês depois, faculdade que subiu o histórico errado e US$ 300 de taxa de tradução: o bastidor real da certificação ECFMG para médicos brasileiros que querem revalidar nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #ecfmg #usmle #usmlestep1 #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="30 ligações caindo num robô, e-mail respondido um mês depois, faculdade que subiu o histórico errado e US$ 300 de taxa de tradução: o bastidor real da certificação ECFMG para médicos brasileiros que querem revalidar nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #ecfmg #usmle #usmlestep1 #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #ecfmg #usmle #usmlestep1 #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #ecfmg #usmle #usmlestep1 #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você já iniciou seu processo no ECFMG ou ainda está na fase de estudo? Conta aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você já iniciou seu processo no ECFMG ou ainda está na fase de estudo? Conta aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Foi o meu caso. Foram cinco meses e meio para me liberarem.
+E aí tu fica no máximo cachorro, porque tu não tem acesso. Eu lembro que eu liguei um dia, eu fiz mais de 30 chamadas. Só caía num robô que dizia que, devido à alta demanda, era para enviar um e-mail. Eu enviei um e-mail e os caras foram me responder um mês depois.
+Porque eu queria saber o que estava acontecendo. Daí os caras foram me dizer: olha, a tua faculdade só subiu o histórico escolar traduzido. Ela deveria ter subido o histórico original.
+Daí, vai lá, eu mando e-mail para o cara da faculdade. Dizem assim: ah, só subiu o traduzido, tem que mandar o original.
+A minha faculdade fez a mesma coisa comigo. Mas a gente deu sorte, porque se só mandasse o original, eles traduziriam — só que eles cobram 300 dólares para traduzir.
+Ah!
+Então, a gente deu sorte.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-13">
+  <header class="card-head">
+    <div class="card-num">CORTE 13</div>
+    <div class="card-head-main">
+      <h2>Limpo privada, faço mercado, cuido de 3 filhos — e passei no Step 1</h2>
+      <div class="card-meta">
+        <span class="badge badge-rotina">Rotina real</span>
+        <span class="chip">⏱ 1:21 (81s)</span>
+        <span class="chip chip-order">Postar 13º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_13_zero-rede-de-apoio.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_13_zero-rede-de-apoio.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_13_zero-rede-de-apoio.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Aqui eu tenho zero rede de apoio. Eu limpo o meu banheiro, limpo a minha privada." 🧽
+
+E ainda assim: aprovada no USMLE Step 1.
+
+A rotina real da Dra. Camila: cozinha, supermercado, 3 filhos, gerencia a casa, tarefas do mestrado em paralelo — um trabalho que não é visto nem remunerado, mas demanda demais. E em cima disso, estudava pros steps.
+
+Sem loucura: treino mantido, sono priorizado, dormindo cedo. "Não tomo ritalina. Não uso de artifícios."
+
+Não existe rotina perfeita de concurseiro full-time. Existe equilibrar os pratos — e não derrubar nenhum.
+
+👉 Comenta ROTINA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #maemedica #oldgrad #ecfmg #step1 #rotina #maemedicina #medicosbrasileiros #revalida #produtividade</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Aqui eu tenho zero rede de apoio. Eu limpo o meu banheiro, limpo a minha privada.&quot; 🧽
+
+E ainda assim: aprovada no USMLE Step 1.
+
+A rotina real da Dra. Camila: cozinha, supermercado, 3 filhos, gerencia a casa, tarefas do mestrado em paralelo — um trabalho que não é visto nem remunerado, mas demanda demais. E em cima disso, estudava pros steps.
+
+Sem loucura: treino mantido, sono priorizado, dormindo cedo. &quot;Não tomo ritalina. Não uso de artifícios.&quot;
+
+Não existe rotina perfeita de concurseiro full-time. Existe equilibrar os pratos — e não derrubar nenhum.
+
+👉 Comenta ROTINA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #maemedica #oldgrad #ecfmg #step1 #rotina #maemedicina #medicosbrasileiros #revalida #produtividade">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #maemedica #oldgrad #ecfmg #step1 #rotina #maemedicina #medicosbrasileiros #revalida #produtividade">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Zero rede de apoio, 3 filhos e mestrado: ela passou no USMLE Step 1 assim</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Zero rede de apoio, 3 filhos e mestrado: ela passou no USMLE Step 1 assim">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Sem rede de apoio nos EUA, ela limpa a casa, faz mercado, cuida de 3 filhos, faz mestrado — e ainda passou no USMLE Step 1 priorizando sono e treino, sem artifícios. A rotina real de quem revalida medicina nos EUA com família. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #rotina</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Sem rede de apoio nos EUA, ela limpa a casa, faz mercado, cuida de 3 filhos, faz mestrado — e ainda passou no USMLE Step 1 priorizando sono e treino, sem artifícios. A rotina real de quem revalida medicina nos EUA com família. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #medicinanoseua #rotina">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #medicinanoseua #rotina</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #medicinanoseua #rotina">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Qual é o maior "trabalho invisível" que compete com seus estudos hoje? Desabafa aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Qual é o maior &quot;trabalho invisível&quot; que compete com seus estudos hoje? Desabafa aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">A gente tem que equilibrar os pratos, né? E não tinha escolha, porque aqui eu tenho zero rede de apoio. Minha rede de apoio é o meu marido, quando ele tá aqui.
+Então, assim: eu limpo o meu banheiro, limpo a minha privada, eu cozinho, faço supermercado. Eu posso não estar trabalhando sendo remunerada, mas eu faço um trabalho que não é visto. Só que ele demanda demais: gerenciar uma casa, gerenciar uma família, cuidar de criança. Fazer minhas tarefas do mestrado também, em paralelo. E ir estudando pros steps. E não deixando de treinar. Priorizando o meu sono, dormindo cedo. Nunca fiz loucura nenhuma. Não tomo ritalina. Não uso de artifícios, que a gente sabe que o pessoal usa.
+Especialmente o pessoal da anestésia.
+É isso aí, dona de casa.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-14">
+  <header class="card-head">
+    <div class="card-num">CORTE 14</div>
+    <div class="card-head-main">
+      <h2>Passou no Step 1? Game over: o resto vai na banguela</h2>
+      <div class="card-meta">
+        <span class="badge badge-mentalidade">Mentalidade</span>
+        <span class="chip">⏱ 1:15 (75s)</span>
+        <span class="chip chip-order">Postar 14º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_14_passou-step1-game-over.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_14_passou-step1-game-over.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_14_passou-step1-game-over.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Aprovado no Step 1? Game over. O resto vai na banguela. 🎮
+
+Não é frase de efeito: é a tese de quem está vivendo isso agora. O Step 1 é "the worst" — e a prova está nos números dela.
+
+A Dra. Camila comprou o QBank do Step 2, não fez nem 20% do banco e já está com 75% de acertos. "É bem mais gostoso de estudar. É mais vida real, é mais clínica."
+
+A dificuldade de todas as coisas está no começo. O pessoal acha que é Step 1, 2, 3. Não é. É só o Step 1.
+
+Pare de ter medo do funil inteiro. Tenha foco na primeira porta.
+
+👉 Comenta GAME OVER que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #usmlestep2 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #qbank #medicosbrasileiros #revalida #thematch #mentalidade</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Aprovado no Step 1? Game over. O resto vai na banguela. 🎮
+
+Não é frase de efeito: é a tese de quem está vivendo isso agora. O Step 1 é &quot;the worst&quot; — e a prova está nos números dela.
+
+A Dra. Camila comprou o QBank do Step 2, não fez nem 20% do banco e já está com 75% de acertos. &quot;É bem mais gostoso de estudar. É mais vida real, é mais clínica.&quot;
+
+A dificuldade de todas as coisas está no começo. O pessoal acha que é Step 1, 2, 3. Não é. É só o Step 1.
+
+Pare de ter medo do funil inteiro. Tenha foco na primeira porta.
+
+👉 Comenta GAME OVER que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #usmlestep2 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #qbank #medicosbrasileiros #revalida #thematch #mentalidade">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #usmlestep2 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #qbank #medicosbrasileiros #revalida #thematch #mentalidade">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Passou no USMLE Step 1? "Game over — o resto vai na banguela"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Passou no USMLE Step 1? &quot;Game over — o resto vai na banguela&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Com menos de 20% do QBank de Step 2 feito, ela já tem 75% de acertos: a prova de que o Step 1 é "the worst" e a dificuldade do USMLE está no começo. Mensagem de esperança com números pra quem quer revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #usmlestep2 #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Com menos de 20% do QBank de Step 2 feito, ela já tem 75% de acertos: a prova de que o Step 1 é &quot;the worst&quot; e a dificuldade do USMLE está no começo. Mensagem de esperança com números pra quem quer revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #usmlestep2 #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #usmlestep2 #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #usmlestep2 #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">O que mais te assusta no USMLE: o Step 1 ou o caminho completo até o Match? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="O que mais te assusta no USMLE: o Step 1 ou o caminho completo até o Match? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">A partir do momento que você foi aprovado no Step 1: game over. O resto vai na banguela.
+O Step 1 é o the worst, na minha opinião. Só pela minha performance no QBank do Mehlman, que eu comprei do Step 2: eu não fiz 20% do banco e eu estou com 75% de acertos. E é bem mais gostoso de estudar para o Step 2. É bem mais vida real, sabe? É mais medicina, é mais clínica.
+A dificuldade de todas as coisas está no começo. O pessoal acha que é Step 1, 2, 3. Não. É só o Step 1. O pessoal precisa passar no Step 1.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-15">
+  <header class="card-head">
+    <div class="card-num">CORTE 15</div>
+    <div class="card-head-main">
+      <h2>A janela era agora: como decidi tirar minha família do Brasil</h2>
+      <div class="card-meta">
+        <span class="badge badge-decisão">Decisão</span>
+        <span class="chip">⏱ 1:13 (73s)</span>
+        <span class="chip chip-order">Postar 15º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_15_janela-mudanca-eua.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_15_janela-mudanca-eua.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_15_janela-mudanca-eua.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">2024: uma oportunidade de MBA nos EUA. A filha mais velha prestes a entrar na primeira série. A janela era agora. ✈️
+
+A Dra. Camila sempre teve o sonho de sair do Brasil, "pelos motivos que todo mundo já conhece". E fez a conta que muita gente evita fazer: a maneira mais rápida de ir era aproveitar a alfabetização da filha, começar o mestrado e, em paralelo, montar o processo de green card.
+
+Saíram do Brasil com o visto direitinho. E chegando lá, o desejo adormecido acordou: quem sabe se dar a chance de estudar.
+
+A pergunta que fica: qual é a SUA janela — e quanto tempo ela fica aberta?
+
+👉 Comenta JANELA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #imigracao #oldgrad #ecfmg #usmlestep1 #greencard #familia #medicosbrasileiros #revalida #morarnoseua #carreiramedica</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="2024: uma oportunidade de MBA nos EUA. A filha mais velha prestes a entrar na primeira série. A janela era agora. ✈️
+
+A Dra. Camila sempre teve o sonho de sair do Brasil, &quot;pelos motivos que todo mundo já conhece&quot;. E fez a conta que muita gente evita fazer: a maneira mais rápida de ir era aproveitar a alfabetização da filha, começar o mestrado e, em paralelo, montar o processo de green card.
+
+Saíram do Brasil com o visto direitinho. E chegando lá, o desejo adormecido acordou: quem sabe se dar a chance de estudar.
+
+A pergunta que fica: qual é a SUA janela — e quanto tempo ela fica aberta?
+
+👉 Comenta JANELA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #imigracao #oldgrad #ecfmg #usmlestep1 #greencard #familia #medicosbrasileiros #revalida #morarnoseua #carreiramedica">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #imigracao #oldgrad #ecfmg #usmlestep1 #greencard #familia #medicosbrasileiros #revalida #morarnoseua #carreiramedica">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">A janela era agora: como essa médica decidiu tirar a família do Brasil</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="A janela era agora: como essa médica decidiu tirar a família do Brasil">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Um MBA nos EUA em 2024, a filha prestes a começar a alfabetização e o processo de green card em paralelo: a lógica da "janela" que tirou essa família de médicos do Brasil — e despertou o sonho do USMLE. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #medicinanoseua #usmle #imigracao #medico</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Um MBA nos EUA em 2024, a filha prestes a começar a alfabetização e o processo de green card em paralelo: a lógica da &quot;janela&quot; que tirou essa família de médicos do Brasil — e despertou o sonho do USMLE. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #medicinanoseua #usmle #imigracao #medico">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #medicinanoseua #usmle #imigracao #medico</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #medicinanoseua #usmle #imigracao #medico">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você já identificou qual é a sua "janela" pra sair do Brasil? Conta aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você já identificou qual é a sua &quot;janela&quot; pra sair do Brasil? Conta aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Em 2024, surgiu uma oportunidade de vir fazer um MBA nos Estados Unidos. E, ao mesmo tempo, a minha filha mais velha estava por entrar na primeira série.
+Eu sempre tive aquela coisa de vir pros Estados Unidos, de sair do Brasil, pelos motivos que todo mundo já conhece. E eu, conversando com ele: olha, a maneira mais rápida da gente ir pros Estados Unidos é aproveitar essa janela, que ela vai começar a alfabetizar. É a gente ir, eu começar esse mestrado. E, em paralelo, a gente estava montando o nosso processo pra aplicar pra um visto de green card.
+Então, a gente saiu do Brasil, veio com o visto direitinho pra cá. E, chegando aqui, me despertou mais uma vez aquele desejo adormecido de, quem sabe, me dar a chance de estudar.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-16">
+  <header class="card-head">
+    <div class="card-num">CORTE 16</div>
+    <div class="card-head-main">
+      <h2>A falsa esperança das 'leis novas': ninguém entrou por elas</h2>
+      <div class="card-meta">
+        <span class="badge badge-match">Match</span>
+        <span class="chip">⏱ 0:57 (57s)</span>
+        <span class="chip chip-order">Postar 16º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_16_falsa-esperanca-leis-estados.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_16_falsa-esperanca-leis-estados.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_16_falsa-esperanca-leis-estados.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Venderam na mídia que as "leis novas dos estados" facilitaram pro médico brasileiro entrar nos EUA como especialista. Falso. ⚠️
+
+Faça o teste: quantos especialistas você conhece que entraram por essas leis? A resposta de quem vive o sistema por dentro: "Por essas leis, nenhum."
+
+Existem caminhos mais antigos, próprios de cada especialidade. Mas TODOS pedem os steps. A dificuldade é a mesma, continua a mesma. Não tem barbada.
+
+A demanda por médicos nos EUA é enorme — mas é um mercado regulamentado. Tem que fazer os steps. Tem que pagar o preço.
+
+Pare de esperar atalho. O atalho é começar.
+
+👉 Comenta MATCH que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #thematch #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #residencianoseua #img #medicosbrasileiros #revalida #match</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Venderam na mídia que as &quot;leis novas dos estados&quot; facilitaram pro médico brasileiro entrar nos EUA como especialista. Falso. ⚠️
+
+Faça o teste: quantos especialistas você conhece que entraram por essas leis? A resposta de quem vive o sistema por dentro: &quot;Por essas leis, nenhum.&quot;
+
+Existem caminhos mais antigos, próprios de cada especialidade. Mas TODOS pedem os steps. A dificuldade é a mesma, continua a mesma. Não tem barbada.
+
+A demanda por médicos nos EUA é enorme — mas é um mercado regulamentado. Tem que fazer os steps. Tem que pagar o preço.
+
+Pare de esperar atalho. O atalho é começar.
+
+👉 Comenta MATCH que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #thematch #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #residencianoseua #img #medicosbrasileiros #revalida #match">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #thematch #usmlestep1 #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #residencianoseua #img #medicosbrasileiros #revalida #match">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">"Leis novas" pra médicos nos EUA: a falsa esperança desmascarada</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="&quot;Leis novas&quot; pra médicos nos EUA: a falsa esperança desmascarada">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Quantos especialistas brasileiros você conhece que entraram nos EUA pelas leis novas dos estados? Nenhum. Todos os caminhos pedem os steps do USMLE — é um mercado regulamentado e não existe barbada para revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #thematch #medicinanoseua #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Quantos especialistas brasileiros você conhece que entraram nos EUA pelas leis novas dos estados? Nenhum. Todos os caminhos pedem os steps do USMLE — é um mercado regulamentado e não existe barbada para revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #thematch #medicinanoseua #revalidacao">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #thematch #medicinanoseua #revalidacao</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #thematch #medicinanoseua #revalidacao">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você conhece alguém que entrou pelas "leis novas"? Conta aqui — quero ver se existe UM caso 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você conhece alguém que entrou pelas &quot;leis novas&quot;? Conta aqui — quero ver se existe UM caso 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Eu acho que essa pergunta vem porque foi vendido aí na mídia a questão das leis dos estados. Então, você criou uma falsa esperança para o médico brasileiro, estrangeiro, de que as coisas seriam... 'ah, agora está mais fácil, eu posso ir como especialista'.
+Eu te pergunto: quantos especialistas você conhece que entraram por essas leis novas?
+Por essas leis, nenhum. Existem caminhos mais antigos, muito mais antigos, próprios de cada especialidade, mas todos eles pedem os steps. A dificuldade é a mesma, continua a mesma, não tem barbada. A demanda por médicos aqui é enorme, mas isso aqui é um mercado regulamentado. Tem que fazer os steps, tem que pagar seu preço.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-17">
+  <header class="card-head">
+    <div class="card-num">CORTE 17</div>
+    <div class="card-head-main">
+      <h2>20 questões em 1 hora: larga o celular em outro cômodo</h2>
+      <div class="card-meta">
+        <span class="badge badge-dicas">Tática de estudo</span>
+        <span class="chip">⏱ 1:07 (67s)</span>
+        <span class="chip chip-order">Postar 17º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_17_20-questoes-em-1-hora.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_17_20-questoes-em-1-hora.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_17_20-questoes-em-1-hora.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Dá pra fazer 20 questões em 1 hora. O preço: largar o celular em outro cômodo. 📵
+
+A matemática do Mike Mehlman é brutal de simples: senta ali. Uma hora, 20 questões. O que te separa delas não é falta de tempo — são as distrações.
+
+"Ah, mas eu trabalho." Então acorda às 5h e faz 20 questões das 5h às 6h. Deixa mais 20 pra quando chegar em casa, no lugar de rolar feed. São 40 questões no dia, encaixadas na vida real.
+
+Ela ainda comprou um reloginho do Pomodoro pra manter o foco no bloco.
+
+Não é sobre ter tempo. É sobre se comprometer com as 40 questões do dia.
+
+👉 Comenta POMODORO que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #pomodoro #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #foco #produtividade #medicosbrasileiros #revalida</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Dá pra fazer 20 questões em 1 hora. O preço: largar o celular em outro cômodo. 📵
+
+A matemática do Mike Mehlman é brutal de simples: senta ali. Uma hora, 20 questões. O que te separa delas não é falta de tempo — são as distrações.
+
+&quot;Ah, mas eu trabalho.&quot; Então acorda às 5h e faz 20 questões das 5h às 6h. Deixa mais 20 pra quando chegar em casa, no lugar de rolar feed. São 40 questões no dia, encaixadas na vida real.
+
+Ela ainda comprou um reloginho do Pomodoro pra manter o foco no bloco.
+
+Não é sobre ter tempo. É sobre se comprometer com as 40 questões do dia.
+
+👉 Comenta POMODORO que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #pomodoro #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #foco #produtividade #medicosbrasileiros #revalida">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #pomodoro #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #questoes #foco #produtividade #medicosbrasileiros #revalida">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">20 questões em 1 hora: a técnica pra vencer o USMLE Step 1 trabalhando</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="20 questões em 1 hora: a técnica pra vencer o USMLE Step 1 trabalhando">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Celular em outro cômodo, 20 questões das 5h às 6h, mais 20 ao chegar em casa em vez de rolar feed — e um relógio Pomodoro na mesa. A matemática real de quem passou no USMLE Step 1 trabalhando e cuidando de família. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #pomodoro #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Celular em outro cômodo, 20 questões das 5h às 6h, mais 20 ao chegar em casa em vez de rolar feed — e um relógio Pomodoro na mesa. A matemática real de quem passou no USMLE Step 1 trabalhando e cuidando de família. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #pomodoro #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #pomodoro #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #pomodoro #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você topa o desafio das 40 questões por dia por 7 dias? Escreve TOPO aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você topa o desafio das 40 questões por dia por 7 dias? Escreve TOPO aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Dá para fazer 20 questões em uma hora. Então, o que é uma hora? Larga o teu celular em outro cômodo, como diz o Mike Mehlman. A questão é essa: são as distrações. Senta ali. Uma hora, tu faz 20 questões.
+'Ah, mas eu trabalho, não sei o quê.' Então acorda às 5 da manhã e faz 20 questões ali, das 5 às 6. Deixa para fazer mais 20 questões quando chegar em casa, no final do dia, em vez de ficar rolando feed.
+Eu até comprei um relógio do Pomodoro. Comprei aquele reloginho e deixava em cima ali. É uma técnica também — depois deem um Google na técnica Pomodoro.
+Mas tu tem que te comprometer de alguma maneira. Tem que encaixar essas 40 questões do dia em algum momento.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-18">
+  <header class="card-head">
+    <div class="card-num">CORTE 18</div>
+    <div class="card-head-main">
+      <h2>Quase adiei a prova por causa das férias das crianças</h2>
+      <div class="card-meta">
+        <span class="badge badge-mentalidade">Mentalidade</span>
+        <span class="chip">⏱ 1:02 (62s)</span>
+        <span class="chip chip-order">Postar 18º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_18_quase-adiei-a-prova.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_18_quase-adiei-a-prova.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_18_quase-adiei-a-prova.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Ela quase adiou a prova por causa das férias das crianças. Duas semanas depois veio o PASS. 😮‍💨
+
+O plano era fazer dia 10 de julho — a família vinha visitar, as férias iam lotar a casa. Desculpa perfeita, né?
+
+Aí ela abriu o calendário no dia 3 de junho pra marcar dali a um mês. Só tinha data pro dia 23, em Orlando. O marido não pensou duas vezes: "Vai lá, faz de uma vez."
+
+Ela foi. E veio o PASS.
+
+A gente sempre vai achar uma desculpa pra procrastinar. A diferença entre o PASS e o "ano que vem eu faço" é, muitas vezes, alguém te dizendo: faz de uma vez.
+
+👉 Comenta PASS que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #procrastinacao #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #medicosbrasileiros #revalida #aprovacao #thematch</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Ela quase adiou a prova por causa das férias das crianças. Duas semanas depois veio o PASS. 😮‍💨
+
+O plano era fazer dia 10 de julho — a família vinha visitar, as férias iam lotar a casa. Desculpa perfeita, né?
+
+Aí ela abriu o calendário no dia 3 de junho pra marcar dali a um mês. Só tinha data pro dia 23, em Orlando. O marido não pensou duas vezes: &quot;Vai lá, faz de uma vez.&quot;
+
+Ela foi. E veio o PASS.
+
+A gente sempre vai achar uma desculpa pra procrastinar. A diferença entre o PASS e o &quot;ano que vem eu faço&quot; é, muitas vezes, alguém te dizendo: faz de uma vez.
+
+👉 Comenta PASS que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #procrastinacao #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #medicosbrasileiros #revalida #aprovacao #thematch">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #procrastinacao #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #mentalidade #medicosbrasileiros #revalida #aprovacao #thematch">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Ela quase adiou o USMLE Step 1 — duas semanas depois veio o PASS</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Ela quase adiou o USMLE Step 1 — duas semanas depois veio o PASS">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Férias das crianças, família visitando, calendário com uma única data em Orlando: ela quase adiou a prova do USMLE Step 1, o marido decretou "faz de uma vez" — e veio o PASS. Como a procrastinação se disfarça de prudência na revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #procrastinacao #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Férias das crianças, família visitando, calendário com uma única data em Orlando: ela quase adiou a prova do USMLE Step 1, o marido decretou &quot;faz de uma vez&quot; — e veio o PASS. Como a procrastinação se disfarça de prudência na revalidação nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #procrastinacao #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #procrastinacao #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #procrastinacao #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Seja honesto: qual é a desculpa que está adiando SUA prova hoje? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Seja honesto: qual é a desculpa que está adiando SUA prova hoje? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Eu fiz a prova em junho. Porque a gente sempre vai achar uma desculpa pra procrastinar: 'ah, não vou fazer porque agora vem as férias, eles vão estar em casa, não vou conseguir estudar'.
+A minha ideia era ter feito a prova lá pelo dia 10 de julho, porque a família ia chegar. Aí eu falei: a família chega, mais um motivo — como é que eu vou ficar fazendo prova com o pessoal aí visitando?
+E quando eu fui abrir o calendário pra fazer a prova, lá pelo dia 3 de junho, que eu queria marcar pra um mês depois, só tinha pro dia 23, aqui em Orlando. E eu: nossa, será que eu faço? Meu marido: vai lá, faz de uma vez.
+E, graças a Deus, deu tudo certo. E veio o PASS.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-19">
+  <header class="card-head">
+    <div class="card-num">CORTE 19</div>
+    <div class="card-head-main">
+      <h2>Passar no Step 1 com filhos te coloca no rol dos extraordinários</h2>
+      <div class="card-meta">
+        <span class="badge badge-validação">Validação</span>
+        <span class="chip">⏱ 0:46 (46s)</span>
+        <span class="chip chip-order">Postar 19º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_19_rol-dos-extraordinarios.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_19_rol-dos-extraordinarios.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_19_rol-dos-extraordinarios.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">O garotão de 20 e poucos anos "não tem nenhum periquito pra dar água". 🦜
+
+Vive só pra estudar, os pais pagam as contas, não tem filho, não se preocupa com nada. Passar nos steps assim é mérito? Claro. Mas não é a mesma prova.
+
+A mesma prova é outra coisa: mais de 10 anos de formado, dupla jornada, plantão, criança em casa — e ainda assim passar no USMLE Step 1.
+
+Quando ela disse "meu caso não tem nada de extraordinário", a resposta foi direta: seu caso se tornou extraordinário no momento em que você passou. Você entrou no rol dos extraordinários.
+
+Se você é médico com família e acha que seu esforço "não conta", esse vídeo é pra você.
+
+👉 Comenta EXTRAORDINÁRIO que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #oldgrad #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #ecfmg #step1 #duplajornada #plantao #medicosbrasileiros #revalida #carreiramedica #familia</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="O garotão de 20 e poucos anos &quot;não tem nenhum periquito pra dar água&quot;. 🦜
+
+Vive só pra estudar, os pais pagam as contas, não tem filho, não se preocupa com nada. Passar nos steps assim é mérito? Claro. Mas não é a mesma prova.
+
+A mesma prova é outra coisa: mais de 10 anos de formado, dupla jornada, plantão, criança em casa — e ainda assim passar no USMLE Step 1.
+
+Quando ela disse &quot;meu caso não tem nada de extraordinário&quot;, a resposta foi direta: seu caso se tornou extraordinário no momento em que você passou. Você entrou no rol dos extraordinários.
+
+Se você é médico com família e acha que seu esforço &quot;não conta&quot;, esse vídeo é pra você.
+
+👉 Comenta EXTRAORDINÁRIO que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #oldgrad #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #ecfmg #step1 #duplajornada #plantao #medicosbrasileiros #revalida #carreiramedica #familia">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #oldgrad #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #ecfmg #step1 #duplajornada #plantao #medicosbrasileiros #revalida #carreiramedica #familia">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Old grad com filhos passou no USMLE Step 1? "Entrou no rol dos extraordinários"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Old grad com filhos passou no USMLE Step 1? &quot;Entrou no rol dos extraordinários&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">O estudante de 20 anos sem responsabilidade nenhuma e o médico 10+ anos de formado, com dupla jornada e criança em casa, não fazem a mesma prova. Por que passar no USMLE Step 1 com família coloca você no rol dos extraordinários. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #oldgrad #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="O estudante de 20 anos sem responsabilidade nenhuma e o médico 10+ anos de formado, com dupla jornada e criança em casa, não fazem a mesma prova. Por que passar no USMLE Step 1 com família coloca você no rol dos extraordinários. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #oldgrad #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #oldgrad #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #oldgrad #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Quantas responsabilidades você carrega enquanto estuda? Filhos, plantão, casa... lista aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Quantas responsabilidades você carrega enquanto estuda? Filhos, plantão, casa... lista aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">O cara, como diz meu amigo Salomão, não tem nenhum periquito pra dar água. Garotão lá, 20 e poucos anos, vive só pra estudar, os pais pagam as contas, não tem filho, não tem que se preocupar com nada. Tá bom, é mérito passar os steps, claro. Mas é totalmente diferente de uma pessoa com mais de 10 anos de formado, dupla jornada, dá plantão, tem criança em casa, e faz os steps. Aí eu faço questão de fazer estudo de caso.
+A colega da semana passada, ela, típico dela, falou: 'ah, mas o meu caso não tem nada de extraordinário'. Eu falei: não. Seu caso se tornou extraordinário a partir do momento que você passou no Step 1. Você já entrou no rol dos extraordinários.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-20">
+  <header class="card-head">
+    <div class="card-num">CORTE 20</div>
+    <div class="card-head-main">
+      <h2>Minha revisão secreta: a pastinha das questões erradas</h2>
+      <div class="card-meta">
+        <span class="badge badge-dicas">Tática de estudo</span>
+        <span class="chip">⏱ 1:16 (76s)</span>
+        <span class="chip chip-order">Postar 20º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_20_pastinha-erradas-nbme.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_20_pastinha-erradas-nbme.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_20_pastinha-erradas-nbme.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">Todo mundo dizia: "não faz resumo, é perda de tempo". Ela montou os cardzinhos à mão — e revisou só eles antes da prova. 🗂️
+
+A técnica da reta final dos NBMEs: nada de caderno bonitinho. Cardzinho manual com "NBME 27, questão 31" + palavras-chave do erro. Só o que ela errou, do jeito que ela errou.
+
+E não é só ela: eu fiz igual. Guardava as erradas numa pastinha de prints no computador pra revisar. Me salvou demais nos TRÊS steps.
+
+Pode ser card, pastinha de print ou baralho de Anki — o formato é seu. O que não é negociável é revisar o erro.
+
+👉 Comenta PASTINHA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #nbme #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #revisao #questoes #metododeestudo #medicosbrasileiros #revalida</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="Todo mundo dizia: &quot;não faz resumo, é perda de tempo&quot;. Ela montou os cardzinhos à mão — e revisou só eles antes da prova. 🗂️
+
+A técnica da reta final dos NBMEs: nada de caderno bonitinho. Cardzinho manual com &quot;NBME 27, questão 31&quot; + palavras-chave do erro. Só o que ela errou, do jeito que ela errou.
+
+E não é só ela: eu fiz igual. Guardava as erradas numa pastinha de prints no computador pra revisar. Me salvou demais nos TRÊS steps.
+
+Pode ser card, pastinha de print ou baralho de Anki — o formato é seu. O que não é negociável é revisar o erro.
+
+👉 Comenta PASTINHA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #nbme #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #revisao #questoes #metododeestudo #medicosbrasileiros #revalida">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #nbme #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #revisao #questoes #metododeestudo #medicosbrasileiros #revalida">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">A pastinha das questões erradas que salvou nos 3 steps do USMLE</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="A pastinha das questões erradas que salvou nos 3 steps do USMLE">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Cardzinhos manuais com "NBME 27, questão 31" + palavras-chave do erro: a técnica de revisão na fase dos NBMEs que salvou nos três steps do USMLE — card, pastinha de prints ou Anki, o que importa é revisar o erro. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #nbme #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Cardzinhos manuais com &quot;NBME 27, questão 31&quot; + palavras-chave do erro: a técnica de revisão na fase dos NBMEs que salvou nos três steps do USMLE — card, pastinha de prints ou Anki, o que importa é revisar o erro. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #nbme #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #nbme #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #nbme #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Como você revisa suas questões erradas hoje: card, print, Anki ou não revisa? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Como você revisa suas questões erradas hoje: card, print, Anki ou não revisa? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Nos NBMEs, eu sempre gostei muito de escrever, de fazer resumo bonitinho, aquela coisa de guria. Então, eu montava os meus cardzinhos. Eu ficava ouvindo: não faz resumo, porque é perda de tempo. Não eram folhas, não eram cadernos de resumo. Era o meu cardzinho — foi a minha maneira de estudar. Eu olhei os meus próprios cardzinhos manuais antes da prova.
+Na fase dos NBMEs, eu acho bem interessante: ou você faz uma pastinha com print das erradas dos NBMEs, ou pode ser um baralho de Anki com as erradas, ou você anota ali rapidinho o que você errou — também vale. Cada um tem seu estilo. O que eu fazia era guardar as erradas no computador para revisar. Me salvou demais nos três steps.
+Eu fiz exatamente assim. As erradas, eu escrevia, fazia no card: 'NBME 27, questão 31'. Botava ali palavras-chave. E serviu para mim de revisão.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-21">
+  <header class="card-head">
+    <div class="card-num">CORTE 21</div>
+    <div class="card-head-main">
+      <h2>Crianças na escola das 8h às 15h: a logística de mãe que passou no Step 1</h2>
+      <div class="card-meta">
+        <span class="badge badge-rotina">Rotina real</span>
+        <span class="chip">⏱ 1:28 (88s)</span>
+        <span class="chip chip-order">Postar 21º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_21_logistica-mae-bus-escolar.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_21_logistica-mae-bus-escolar.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_21_logistica-mae-bus-escolar.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Como conciliar estudo e maternidade?" — a pergunta de um milhão de dólares. A resposta é logística, não milagre. 🚌
+
+O ônibus escolar busca as crianças às 8h e devolve às 15h. Aquela janela era o gás dela — mas no MESMO intervalo entravam supermercado, compras, cozinha e faxina, porque com as crianças em casa ficava mais complicado.
+
+Depois das 15h: futebol, jiu-jitsu e presença de verdade. Às 20h, 20h30, as crianças dormindo — e quando o marido botava elas pra dormir, ela "ia lá e fazia mais umas questões".
+
+Sem rotina militar. Disciplinada dentro da própria velocidade. E aprovada no USMLE Step 1.
+
+👉 Comenta LOGÍSTICA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #maemedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotina #maemedicina #organizacao #medicosbrasileiros #revalida</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Como conciliar estudo e maternidade?&quot; — a pergunta de um milhão de dólares. A resposta é logística, não milagre. 🚌
+
+O ônibus escolar busca as crianças às 8h e devolve às 15h. Aquela janela era o gás dela — mas no MESMO intervalo entravam supermercado, compras, cozinha e faxina, porque com as crianças em casa ficava mais complicado.
+
+Depois das 15h: futebol, jiu-jitsu e presença de verdade. Às 20h, 20h30, as crianças dormindo — e quando o marido botava elas pra dormir, ela &quot;ia lá e fazia mais umas questões&quot;.
+
+Sem rotina militar. Disciplinada dentro da própria velocidade. E aprovada no USMLE Step 1.
+
+👉 Comenta LOGÍSTICA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #maemedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotina #maemedicina #organizacao #medicosbrasileiros #revalida">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #maemedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #rotina #maemedicina #organizacao #medicosbrasileiros #revalida">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Mãe de 3 no USMLE Step 1: a logística das 8h às 15h que funcionou</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Mãe de 3 no USMLE Step 1: a logística das 8h às 15h que funcionou">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Ônibus escolar das 8h às 15h como janela de estudo, supermercado e faxina no mesmo intervalo, filhos dormindo às 20h e o marido botando as crianças pra dormir enquanto ela fazia mais questões: a logística real de uma mãe que passou no USMLE Step 1. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #maemedica #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Ônibus escolar das 8h às 15h como janela de estudo, supermercado e faxina no mesmo intervalo, filhos dormindo às 20h e o marido botando as crianças pra dormir enquanto ela fazia mais questões: a logística real de uma mãe que passou no USMLE Step 1. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #maemedica #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #maemedica #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #maemedica #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Qual é a SUA janela de estudo no dia? Manhã, madrugada ou quando as crianças dormem? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Qual é a SUA janela de estudo no dia? Manhã, madrugada ou quando as crianças dormem? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Essa é a pergunta de um milhão de dólares, né?
+A gente vai fazendo o que é possível, né?
+Aqui, as crianças, a rotina: eles vão pra escola, o bus vem pegá-los às oito da manhã e eu busco eles na parada às três da tarde. Então, das oito às três da tarde, eles não estavam em casa.
+Então, eu dava o meu gás nesse intervalo, né? Só que, nesse intervalo, por vezes, eu tinha que ir no supermercado, fazer compras, cozinhar, faxinar a casa. Porque, uma vez que eles estavam em casa, ficava mais complicado.
+Daí, eles têm tarefas extracurriculares: tem que levar no futebol, tem que levar no jiu-jitsu, e tem que estar ali, depois, disposto, presente para eles, obviamente, dar atenção.
+E eu não vou dizer que eu tenho uma rotina militar, mas, assim, aqui em casa as crianças dormem cedo. Então, talvez por isso que eu tenha conseguido também, porque eu sou disciplinada dentro da minha velocidade.
+Oito, oito e meia da noite, as crianças estavam indo dormir. Às vezes o meu marido botava eles para dormir, aí eu ia lá e fazia mais umas questões.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-22">
+  <header class="card-head">
+    <div class="card-num">CORTE 22</div>
+    <div class="card-head-main">
+      <h2>Refazer residência nos EUA? Aqui não é escravidão como no Brasil</h2>
+      <div class="card-meta">
+        <span class="badge badge-carreira">carreira</span>
+        <span class="chip">⏱ 1:05 (65s)</span>
+        <span class="chip chip-order">Postar 22º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_22_refazer-residencia-sem-escravismo.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_22_refazer-residencia-sem-escravismo.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_22_refazer-residencia-sem-escravismo.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Eu não acho ruim ter que refazer uma residência." — dita por uma médica com 16 anos de formada. 🏥
+
+O medo do especialista brasileiro é real: "refazer residência é regresso". Mas olha o outro lado que ninguém te conta.
+
+Residência nos EUA é remunerada — bem remunerada comparando com a do Brasil. Tem benefícios: seguro saúde, seguro até de pet. E, nas palavras dela, "não é um modelo de escravidão como no Brasil".
+
+E não é só sobre dinheiro: ética, relações e questões legais funcionam diferente. A clínica, o diagnóstico e o tratamento que você aprendeu? São os mesmos.
+
+Regresso é passar mais 20 anos num sistema que te esmaga.
+
+👉 Comenta RESIDÊNCIA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #img #medicosbrasileiros #revalida #carreiramedica</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Eu não acho ruim ter que refazer uma residência.&quot; — dita por uma médica com 16 anos de formada. 🏥
+
+O medo do especialista brasileiro é real: &quot;refazer residência é regresso&quot;. Mas olha o outro lado que ninguém te conta.
+
+Residência nos EUA é remunerada — bem remunerada comparando com a do Brasil. Tem benefícios: seguro saúde, seguro até de pet. E, nas palavras dela, &quot;não é um modelo de escravidão como no Brasil&quot;.
+
+E não é só sobre dinheiro: ética, relações e questões legais funcionam diferente. A clínica, o diagnóstico e o tratamento que você aprendeu? São os mesmos.
+
+Regresso é passar mais 20 anos num sistema que te esmaga.
+
+👉 Comenta RESIDÊNCIA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #img #medicosbrasileiros #revalida #carreiramedica">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #residenciamedica #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #img #medicosbrasileiros #revalida #carreiramedica">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Refazer residência nos EUA? "Aqui não é escravidão como no Brasil"</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Refazer residência nos EUA? &quot;Aqui não é escravidão como no Brasil&quot;">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Residência nos EUA é remunerada, tem seguro saúde e até seguro de pet — e "não é um modelo de escravidão como no Brasil". Uma médica 16 anos de formada explica por que refazer a residência para revalidar medicina nos EUA via USMLE e Match não é regresso. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #residenciamedica #thematch #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Residência nos EUA é remunerada, tem seguro saúde e até seguro de pet — e &quot;não é um modelo de escravidão como no Brasil&quot;. Uma médica 16 anos de formada explica por que refazer a residência para revalidar medicina nos EUA via USMLE e Match não é regresso. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #residenciamedica #thematch #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #residenciamedica #thematch #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #residenciamedica #thematch #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Refazer residência te assusta ou você encararia de boa? Conta aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Refazer residência te assusta ou você encararia de boa? Conta aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Eu não acho ruim ter que refazer uma residência, porque aqui o sistema é completamente diferente, né, Iago, do sistema brasileiro de saúde. Até as questões de ética, as questões legais.
+A gente que teve a formação no Brasil, obviamente que a clínica, o diagnóstico, o tratamento, ele é igual. Só que são outras questões que são diferentes, questões de relações, né?
+Então, eu não acho de todo ruim ter que refazer uma residência — uma residência que tu vai ser bem remunerado dentro, comparando com residência do Brasil, obviamente.
+Com benefícios, né, Iago? Tu tem seguro saúde, tem seguro de pet, que a gente ficou sabendo agora há pouco.
+Sim, tem.
+Não é um modelo de escravidão como no Brasil. Então, não acho de todo ruim.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-23">
+  <header class="card-head">
+    <div class="card-num">CORTE 23</div>
+    <div class="card-head-main">
+      <h2>Bioquímica? Eu escolhi errar</h2>
+      <div class="card-meta">
+        <span class="badge badge-estratégia">estratégia</span>
+        <span class="chip">⏱ 0:42 (42s)</span>
+        <span class="chip chip-order">Postar 23º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_23_escolhi-errar-bioquimica.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_23_escolhi-errar-bioquimica.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_23_escolhi-errar-bioquimica.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">"Bioquímica foi uma coisa que eu escolhi errar." E passou no Step 1. 🎯
+
+Leia de novo: ela não gabaritou tudo. Ela fez TRIAGEM de conteúdo — se aprofundou no que não podia errar (clínica, o que é menos decoreba pra ela) e deixou o rodapé de livro pra trás.
+
+Aprendeu muita bioquímica no caminho? Aprendeu. Virou expert? Não — e não precisava.
+
+Pro old grad sem tempo, essa é a permissão estratégica que faltava: prova não se vence estudando tudo. Se vence sabendo o que você PODE errar.
+
+Você já faz essa triagem ou tenta abraçar o edital inteiro?
+
+👉 Comenta ERRAR que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #usmlestep1 #estrategia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #bioquimica #metododeestudo #medicosbrasileiros #revalida #questoes</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="&quot;Bioquímica foi uma coisa que eu escolhi errar.&quot; E passou no Step 1. 🎯
+
+Leia de novo: ela não gabaritou tudo. Ela fez TRIAGEM de conteúdo — se aprofundou no que não podia errar (clínica, o que é menos decoreba pra ela) e deixou o rodapé de livro pra trás.
+
+Aprendeu muita bioquímica no caminho? Aprendeu. Virou expert? Não — e não precisava.
+
+Pro old grad sem tempo, essa é a permissão estratégica que faltava: prova não se vence estudando tudo. Se vence sabendo o que você PODE errar.
+
+Você já faz essa triagem ou tenta abraçar o edital inteiro?
+
+👉 Comenta ERRAR que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #usmlestep1 #estrategia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #bioquimica #metododeestudo #medicosbrasileiros #revalida #questoes">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #usmlestep1 #estrategia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #step1 #bioquimica #metododeestudo #medicosbrasileiros #revalida #questoes">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">"Bioquímica eu escolhi errar" — e passou no USMLE Step 1 (estratégia real)</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="&quot;Bioquímica eu escolhi errar&quot; — e passou no USMLE Step 1 (estratégia real)">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Triagem de conteúdo no USMLE Step 1: ela se aprofundou no que não podia errar (clínica) e "escolheu errar" bioquímica — a permissão estratégica que o médico old grad sem tempo precisa ouvir para revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #estrategia #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Triagem de conteúdo no USMLE Step 1: ela se aprofundou no que não podia errar (clínica) e &quot;escolheu errar&quot; bioquímica — a permissão estratégica que o médico old grad sem tempo precisa ouvir para revalidar medicina nos EUA. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #usmlestep1 #estrategia #medicinanoseua">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #usmlestep1 #estrategia #medicinanoseua</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #usmlestep1 #estrategia #medicinanoseua">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Qual matéria do Step 1 você "escolheria errar" se pudesse? Confessa aqui 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Qual matéria do Step 1 você &quot;escolheria errar&quot; se pudesse? Confessa aqui 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Bioquímica. Bioquímica foi uma coisa, assim, que eu não... Eu escolhi errar.
+Não é que eu escolhi errar, mas, assim, eu não... Não me aprofundei, né? Eu fui me aprofundar naquilo que eu não podia errar. Naquilo que é mais... Não vou dizer fácil, mas, assim, que é menos decoreba, né? Pelo menos para a minha pessoa. Clínica, né?
+Então, assim, eu me preocupei em entender e aprender. Não... As coisas que são rodapé, né? Rodapé de livro.
+Obviamente que eu aprendi muita bioquímica ao longo, mas eu não foquei em ficar uma expert em bioquímica.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="card" id="corte-24">
+  <header class="card-head">
+    <div class="card-num">CORTE 24</div>
+    <div class="card-head-main">
+      <h2>Médico de família nos EUA domina água, céu e mar</h2>
+      <div class="card-meta">
+        <span class="badge badge-carreira">carreira</span>
+        <span class="chip">⏱ 0:49 (49s)</span>
+        <span class="chip chip-order">Postar 24º</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-body">
+    <div class="video-col">
+      <video controls preload="none" poster="cortes/poster_24_agua-ceu-e-mar.jpg" src="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_24_agua-ceu-e-mar.mp4"></video>
+      <a class="download-btn" href="https://github.com/hiagocabralmd-arch/cortes-camila-step1/releases/download/cortes/corte_24_agua-ceu-e-mar.mp4" download>Baixar MP4</a>
+    </div>
+    <div class="copy-col">
+      <div class="copy-block">
+        <h3><span class="plat plat-ig">Instagram</span></h3>
+        <p class="field-label">Caption</p>
+        <div class="copy-text pre">No Brasil: médico de família no postinho tomando tapa de vereador semianalfabeto. Nos EUA: fellow de Medicina Aeroespacial. 🚀
+
+E não é exagero: a Medicina da Família americana "domina água, céu e mar". Tem gente fazendo fellow de Medicina de Mergulho e Câmara Hiperbárica. Outros abrem med spa, trabalham com estética e emagrecimento.
+
+Quer criança? Atende criança. Quer gestante? Faz parto, faz cesariana. Faz até implante capilar — "melhor coisa".
+
+A especialidade que no Brasil é sinônimo de beco sem saída é, nos EUA, a de maior liberdade de escopo. O problema nunca foi a especialidade. É o sistema onde ela está.
+
+👉 Comenta VOA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD</div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#usmle #medicinadefamilia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #medspa #medicosbrasileiros #revalida #carreiramedica</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn primary" data-copy="No Brasil: médico de família no postinho tomando tapa de vereador semianalfabeto. Nos EUA: fellow de Medicina Aeroespacial. 🚀
+
+E não é exagero: a Medicina da Família americana &quot;domina água, céu e mar&quot;. Tem gente fazendo fellow de Medicina de Mergulho e Câmara Hiperbárica. Outros abrem med spa, trabalham com estética e emagrecimento.
+
+Quer criança? Atende criança. Quer gestante? Faz parto, faz cesariana. Faz até implante capilar — &quot;melhor coisa&quot;.
+
+A especialidade que no Brasil é sinônimo de beco sem saída é, nos EUA, a de maior liberdade de escopo. O problema nunca foi a especialidade. É o sistema onde ela está.
+
+👉 Comenta VOA que eu te mando o vídeo completo.
+
+🎥 Entrevista completa no YouTube: @HiagoCabralMD
+
+#usmle #medicinadefamilia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #medspa #medicosbrasileiros #revalida #carreiramedica">Copiar caption + hashtags</button>
+          <button type="button" class="copy-btn" data-copy="#usmle #medicinadefamilia #medicinanoseua #revalidacao #medicinabrasil #medico #medicina #oldgrad #ecfmg #usmlestep1 #thematch #residencianoseua #medspa #medicosbrasileiros #revalida #carreiramedica">Copiar só hashtags</button>
+        </div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-yt">YouTube</span></h3>
+        <p class="field-label">Título do Short</p>
+        <div class="copy-text">Médico de família nos EUA domina água, céu e mar (no Brasil, tapa de vereador)</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Médico de família nos EUA domina água, céu e mar (no Brasil, tapa de vereador)">Copiar título</button></div>
+        <p class="field-label">Descrição</p>
+        <div class="copy-text pre">Fellow de Medicina Aeroespacial, Medicina de Mergulho, med spa, parto, cesariana e até implante capilar: o escopo absurdo da Medicina de Família nos EUA versus o postinho no Brasil. Por que revalidar medicina nos EUA via USMLE muda o jogo da especialidade. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinadefamilia #medicinanoseua #thematch</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Fellow de Medicina Aeroespacial, Medicina de Mergulho, med spa, parto, cesariana e até implante capilar: o escopo absurdo da Medicina de Família nos EUA versus o postinho no Brasil. Por que revalidar medicina nos EUA via USMLE muda o jogo da especialidade. Entrevista completa no canal @HiagoCabralMD.
+
+#Shorts #usmle #medicinadefamilia #medicinanoseua #thematch">Copiar descrição</button></div>
+        <p class="field-label">Hashtags</p>
+        <div class="copy-text mono">#Shorts #usmle #medicinadefamilia #medicinanoseua #thematch</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="#Shorts #usmle #medicinadefamilia #medicinanoseua #thematch">Copiar hashtags</button></div>
+      </div>
+      <div class="copy-block">
+        <h3><span class="plat plat-cm">Comentário fixado</span></h3>
+        <div class="copy-text pre">Você faria Medicina de Família nos EUA com esse escopo todo? Sim ou nunca? 👇</div>
+        <div class="btn-row"><button type="button" class="copy-btn" data-copy="Você faria Medicina de Família nos EUA com esse escopo todo? Sim ou nunca? 👇">Copiar comentário</button></div>
+      </div>
+      <details class="transcricao">
+        <summary>Ver transcrição do corte</summary>
+        <div class="copy-text pre">Porque no Brasil, o coitado fica lá no postinho tomando um tapa de um vereador semianalfabeto.
+Semianalfabeto já é superestimando muito.
+Agora, aqui nos Estados Unidos, médico de família aqui... o cara voa. Literalmente. Ele tem fellow de Medicina Aeroespacial. Eu conheço um que está fazendo um fellow de Medicina de Mergulho e Câmara Hiperbárica.
+O pessoal da Medicina da Família domina água, céu e mar. Abre med spa, faz tudo, até procedimentos. Trabalha com estética, com emagrecimento.
+Quer trabalhar com criança, vai trabalhar com criança. Quer trabalhar com gestante, vai trabalhar com gestante. Faz parto, faz cesariana, faz o que quiser. Implanta cabelo, né?
+Sim.
+Faz implante capilar, melhor coisa.</div>
+      </details>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <h2>Checklist rápido da editora</h2>
+    <div class="checklist">
+      <div class="check-item"><strong>YouTube:</strong> subir como Short, colar título + descrição acima, publicar e fixar o comentário.</div>
+      <div class="check-item"><strong>Instagram:</strong> Reel 9:16, colar caption + hashtags, capa = frame do hook (pôster anexo).</div>
+      <div class="check-item"><strong>Ordem:</strong> seguir a numeração 01 → 08 (prioridade definida na seleção).</div>
+      <div class="check-item"><strong>Arquivos:</strong> baixar o MP4 de cada card antes de agendar no Studio / Meta Business Suite.</div>
+      <div class="check-item"><strong>Comentário fixado:</strong> postar logo após a publicação, nas duas plataformas.</div>
+      <div class="check-item"><strong>Formato:</strong> todos os cortes já estão em 1080×1920 vertical — não recortar nem reenquadrar.</div>
+    </div>
+    <p class="fim">Página gerada a partir de cortes/selecao.json + cortes/copy.json · @HiagoCabralMD</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  function copiar(texto, btn) {
+    function ok() {
+      var original = btn.textContent;
+      btn.textContent = "Copiado ✓";
+      btn.classList.add("copied");
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+      }, 1500);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = texto;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); ok(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(ok, fallback);
+    } else {
+      fallback();
+    }
+  }
+  document.addEventListener("click", function (ev) {
+    var btn = ev.target.closest(".copy-btn");
+    if (!btn) return;
+    copiar(btn.getAttribute("data-copy"), btn);
+  });
+})();
+</script>
+</body>
+</html>
